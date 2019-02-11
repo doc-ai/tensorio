@@ -1,8 +1,8 @@
 ### Introduction
 
-TensorIO is a lightweight, cross-platfor framework for on-device machine learning, bringing the power of TensorFlow Lite to iOS, Android, and React Native applications. 
+TensorIO is a lightweight, cross-platform framework for on-device machine learning, bringing the power of TensorFlow Lite to iOS, Android, and React Native applications. 
 
-TensorIO provides a declarative input-output interface to an underlying machine learning model while also providing a structure for packaging models, metadata about them, and related assets into a single, deliverable unit. TensorIO makes it easy for for resarchers and application developers to use their models on mobile phones and it simplifies the process of deploying models to mobile devices.
+TensorIO provides a declarative input-output interface to an underlying machine learning model while also providing a structure for packaging models, metadata about them, and related assets into a single, deliverable unit. TensorIO makes it easy for researchers and application developers to use their models on mobile phones and it simplifies the process of deploying models to mobile devices.
 
 TensorIO implements no machine learning itself. Rather it relies on the power of an underlying machine learning library while taking care of the boilerplate code that is needed to get data into and out of a model. Such preparation includes quantization of inputs, image croping and scaling, normalization, byte order operations, and other transformations. Library adopters describe a model's expectations for inputs and outputs using json and then simply send native data types into a model and receive native data types back from it. TensorIO ensures the data is correctly pre- and postprocessed and that bytes are moved into and out of tensor buffers correctly.
 
@@ -21,7 +21,7 @@ All TensorIO, Net Runner, and related code is open source under an Apache 2 lice
 
 ### Example Usage
 
-Given a TensorFlow Lite MobileNet ImageNet classification model that has been packaged into a TensorIO bundle, the model.json file will look like:
+Given a TensorFlow Lite MobileNet ImageNet classification model that has been packaged into a TensorIO bundle ([bundled here](https://github.com/doc-ai/tensorio/tree/master/models/image-classification.tfbundle)), the model.json file will look like:
 
 ```json
 {

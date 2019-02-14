@@ -71,6 +71,20 @@ NSDictionary *inference = (NSDictionary*)[model runOn:buffer];
 NSDictionary *classification = [inference[@"classification"] topN:5 threshold:0.1];
 ```
 
+Or with Swift:
+
+```swift
+let image = UIImage(named: "example-image")!
+let pixels = image.pixelBuffer()!
+let value = pixels.takeUnretainedValue() as CVPixelBuffer
+let buffer = TIOPixelBuffer(pixelBuffer:value, orientation: .up)
+
+let model = TIOTFLiteModel.withBundleAtPath(path)!
+
+let inference = model.run(on: buffer)
+let classification = ((inference as! NSDictionary)["classification"] as! NSDictionary).topN(5, threshold: 0.1)
+```
+
 And in React Native:
 
 ```js
@@ -94,11 +108,11 @@ RNTensorIO.run({
 
 [TensorIO for iOS](https://github.com/doc-ai/tensorio-ios)
 
-Our Objective-C++ implementation of TensorIO. Requires iOS 9.3+ and has been tested on devices as old as a 5th generation iPod touch (2012).
+Our Objective-C++ implementation of TensorIO, with support for Swift. Requires iOS 9.3+ and has been tested on devices as old as a 5th generation iPod touch (2012).
 
 [Net Runner for iOS](https://github.com/doc-ai/net-runner-ios)
 
-Net Runner is our iOS application enviornment for running and evaluating computer vision machine learning models packaged for TensorIO. Models may be run on live camera input or bulk evaluated against album photos. New models may be downloaded directly into the application. Net Runner is available for download in the [iOS App Store](https://itunes.apple.com/us/app/net-runner-by-doc-ai/id1435828634?mt=8).
+Net Runner is our iOS application environment for running and evaluating computer vision machine learning models packaged for TensorIO. Models may be run on live camera input or bulk evaluated against album photos. New models may be downloaded directly into the application. Net Runner is available for download in the [iOS App Store](https://itunes.apple.com/us/app/net-runner-by-doc-ai/id1435828634?mt=8).
 
 ### Android
 
@@ -118,10 +132,10 @@ Our React Native bindings for TensorIO, with full support for the iOS version. R
 
 [TensorIO Demo App for React Native](https://github.com/doc-ai/react-native-tensorio-example)
 
-An example application demonstrating how to use the TensorIO module in a React Native application.
+An example application demonstrating how to use the TensorIO module in a React Native application, with a MobileNet ImageNet classification model.
 
 ### Tools
 
 [TensorIO Bundler](https://github.com/doc-ai/tensorio-bundler)
 
-Our bundling utility for packing models into the TensorIO format.
+Our bundling utility for packaging models into the TensorIO format. Includes a Slack bot, Bundlebot, that helps convert checkpointed models to the TensorIO format and deploy them to device in under a minute.

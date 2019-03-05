@@ -6,7 +6,7 @@ TensorIO provides a declarative input-output interface to an underlying machine 
 
 TensorIO implements no machine learning itself. Rather it relies on the power of an underlying machine learning library while taking care of the boilerplate code that is needed to get data into and out of a model. Such preparation includes quantization of inputs, image croping and scaling, normalization, byte order operations, and other transformations. Library adopters describe a model's expectations for inputs and outputs using json and then simply send native data types into a model and receive native data types back from it. TensorIO ensures the data is correctly pre- and postprocessed and that bytes are moved into and out of tensor buffers correctly.
 
-TensorIO is currently available for iOS and React Native with Android support expected by the end of Feb 2019. TensorIO supports TensorFlow Lite models and is extensible to other machine learning libraries.
+TensorIO is currently available for iOS, Android, and React Native for iOS. Android support for React Native is forthcoming. TensorIO supports TensorFlow Lite models and is extensible to other machine learning libraries.
 
 ### License
 
@@ -116,13 +116,13 @@ Net Runner is our iOS application environment for running and evaluating compute
 
 ### Android
 
-TensorIO for Android is in active development and is expected to be made publicly available by the end of Feb 2019. It will provide the same declarative interface for Android devices with support for TensorFlow Lite models. A version of Net Runner for Android will be released either simultaneously or shortly thereafter.
-
-<!--
 [TensorIO for Android](https://github.com/doc-ai/tensorio-android)
 
+Our Java implemention of TensorIO for Android. Requires Java 8.
+
 [Net Runner for Android](https://github.com/doc-ai/net-runner-android)
--->
+
+Net Runner is our Android application environment for running computer vision models on device, including support for GPU acceleration.
 
 ### React Native
 

@@ -139,3 +139,17 @@ An example application demonstrating how to use the TensorIO module in a React N
 [TensorIO Bundler](https://github.com/doc-ai/tensorio-bundler)
 
 Our bundling utility for packaging models into the TensorIO format. Includes a Slack bot, Bundlebot, that helps convert checkpointed models to the TensorIO format and deploy them to device in under a minute.
+
+### Additional Repositories
+
+[TensorFlow @ doc.ai](https://github.com/doc-ai/tensorflow)
+
+Our TensorFlow fork with fixes and additional ops enabled to support both training and inference on iOS. See specifically the [v1.13.0-rc2-ios-fixes](https://github.com/doc-ai/tensorflow/tree/v1.13.0-rc2-ios-fixes) branch and our [build script](https://github.com/doc-ai/tensorflow/blob/v1.13.0-rc2-ios-fixes/tensorflow/contrib/makefile/create_full_ios_frameworks.sh) for composing the framework.
+
+[Tensorflow.framework](https://github.com/doc-ai/tensorflow-ios-framework)
+
+Unofficial build of the full tensorflow.framework (not TFLite) for iOS that we will be using in the TensorIO/TensorFlow subspec.
+
+[TensorFlow Cocoapod](https://github.com/doc-ai/tensorio-tensorflow-ios)
+
+Unofficial full build of TensorFlow in a self-contained CocoaPod that we will be using in the TensorIO/TensorFlow subspec. Vends the tensorflow, protobuf, and nysnc static libraries and all headers.

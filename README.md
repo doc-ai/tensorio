@@ -21,7 +21,7 @@ All TensorIO, Net Runner, and related code is open source under an Apache 2 lice
 
 ### Example Usage
 
-Given a TensorFlow Lite MobileNet ImageNet classification model that has been packaged into a TensorIO bundle ([bundled here](https://github.com/doc-ai/tensorio/tree/master/models/image-classification.tfbundle)), the model.json file will look like:
+Given a TensorFlow Lite MobileNet ImageNet classification model that has been packaged into a TensorIO bundle ([bundled here](https://github.com/doc-ai/tensorio/tree/master/models/image-classification.tiobundle)), the model.json file will look like:
 
 ```json
 {

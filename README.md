@@ -33,6 +33,7 @@ Given a TensorFlow Lite MobileNet ImageNet classification model that has been pa
   "license": "Apache License. Version 2.0 http://www.apache.org/licenses/LICENSE-2.0",
   "model": {
     "file": "mobilenet_v2_1.4_224.tflite",
+    "backend": "tflite",
     "quantized": false,
     "type": "image.classification.imagenet"
   },

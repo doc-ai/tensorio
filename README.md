@@ -1,12 +1,10 @@
 ### Introduction
 
-TensorIO is a lightweight, cross-platform framework for on-device machine learning, bringing the power of TensorFlow Lite to iOS, Android, and React Native applications. 
+TensorIO is a lightweight, cross-platform library for on-device machine learning, bringing the power of TensorFlow and TensorFlow Lite to iOS, Android, and React Native applications. 
 
-TensorIO provides a declarative input-output interface to an underlying machine learning model while also providing a structure for packaging models, metadata about them, and related assets into a single, deliverable unit. TensorIO makes it easy for researchers and application developers to use their models on mobile phones and it simplifies the process of deploying models to mobile devices.
+The library provides a declarative input-output interface to an underlying machine learning model while also providing a structure for packaging models, metadata about them, and related assets into a single, deliverable unit. TensorIO makes it easy for researchers and application developers to use their models on mobile phones and it simplifies the process of deploying models to mobile devices.
 
-TensorIO implements no machine learning itself. Rather it relies on the power of an underlying machine learning library while taking care of the boilerplate code that is needed to get data into and out of a model. Such preparation includes quantization of inputs, image croping and scaling, normalization, byte order operations, and other transformations. Library adopters describe a model's expectations for inputs and outputs using json and then simply send native data types into a model and receive native data types back from it. TensorIO ensures the data is correctly pre- and postprocessed and that bytes are moved into and out of tensor buffers correctly.
-
-TensorIO is currently available for iOS, Android, and React Native for iOS. Android support for React Native is forthcoming. TensorIO supports TensorFlow Lite models and is extensible to other machine learning libraries.
+TensorIO is currently available for iOS, Android, and React Native for iOS. Android support for React Native is forthcoming. TensorIO has full support for TensorFlow on iOS and TensorFlow Lite support on both iOS and Android, and it may be easily extended to support other machine learning libraries.
 
 ### License
 
@@ -20,6 +18,10 @@ All TensorIO, Net Runner, and related code is open source under an Apache 2 lice
 - [Aria Vaghef](https://github.com/aria-doc-ai)
 
 ### Example Usage
+
+TensorIO implements no machine learning itself. Rather it relies on the power of an underlying machine learning library while taking care of the boilerplate code that is needed to get data into and out of a model. Such preparation includes quantization of inputs, image croping and scaling, normalization, byte order operations, and other transformations. 
+
+Library adopters describe a model's expectations for inputs and outputs using json and then simply send native data types into a model and receive native data types back from it. TensorIO ensures the data is correctly pre- and postprocessed and that bytes are moved into and out of tensor buffers correctly.
 
 Given a TensorFlow Lite MobileNet ImageNet classification model that has been packaged into a TensorIO bundle ([bundled here](https://github.com/doc-ai/tensorio/tree/master/models/image-classification.tiobundle)), the model.json file will look like:
 

@@ -131,7 +131,7 @@ Net Runner is our Android application environment for running computer vision mo
 
 [TensorIO for React Native](https://github.com/doc-ai/react-native-tensorio)
 
-Our React Native bindings for TensorIO, with full support for the iOS version. React Native bindings for Android are expected by the end of March 2019.
+Our React Native bindings for TensorIO, with full support for the iOS version. React Native bindings for Android are forthcoming.
 
 [TensorIO Demo App for React Native](https://github.com/doc-ai/react-native-tensorio-example)
 

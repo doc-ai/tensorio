@@ -1,6 +1,6 @@
 {
   "$schema":  "http://json-schema.org/draft-07/schema#",
-  "$id":      "https://github.com/doc-ai/tensorio/schemas/v0.6.1/tflite/schema.json",
+  "$id":      "https://github.com/doc-ai/tensorio/schemas/v0.7.0/tensorflow/schema.json",
 
   "definitions": {
     
@@ -12,12 +12,19 @@
         "quantized"
       ],
       "properties": {
-        "file":       { "type":   "string"  },
-        "quantized":  { "type":   "boolean" },
-        "type":       { "type":   "string"  },
+        "file":       { "type":   "string"      },
+        "quantized":  { "type":   "boolean"     },
+        "type":       { "type":   "string"      },
         "backend":    { "type":   "string",
-                        "const":  "tflite"  },
-        "class":      { "type":   "string"  }
+                        "const":  "tensorflow"  },
+        "class":      { "type":   "string"      },
+        "modes":      {
+          "type": "array",
+           "items": {
+            "type": "string",
+            "enum": ["predict", "train"]
+          }
+        }
       }
     },
 
@@ -69,7 +76,7 @@
         },
         "dtype": {
           "type": "string",
-          "enum": ["uint8, float32"]
+          "enum": ["uint8, float32", "int32", "int64"]
         },
         "shape": {
           "type": "array",
@@ -180,7 +187,7 @@
         },
         "dtype": {
           "type": "string",
-          "enum": ["uint8, float32"]
+          "enum": ["uint8, float32", "int32", "int64"]
         },
         "shape": {
           "type": "array",
@@ -295,6 +302,19 @@
           { "$ref": "#/definitions/output.array" },
           { "$ref": "#/definitions/output.image" }
         ]
+      }
+    },
+    "train": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ops"
+      ],
+      "properties": {
+        "ops": { 
+          "type": "array",
+          "items": { "type": "string" }
+        }
       }
     },
     "options": { "$ref": "#/definitions/options" }

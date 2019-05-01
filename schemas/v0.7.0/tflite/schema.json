@@ -1,6 +1,6 @@
 {
   "$schema":  "http://json-schema.org/draft-07/schema#",
-  "$id":      "https://github.com/doc-ai/tensorio/schemas/v0.6.1/tflite/schema.json",
+  "$id":      "https://github.com/doc-ai/tensorio/schemas/v0.7.0/tflite/schema.json",
 
   "definitions": {
     
@@ -17,7 +17,14 @@
         "type":       { "type":   "string"  },
         "backend":    { "type":   "string",
                         "const":  "tflite"  },
-        "class":      { "type":   "string"  }
+        "class":      { "type":   "string"  },
+        "modes":      {
+          "type": "array",
+           "items": {
+            "type": "string",
+            "enum": ["predict"]
+          }
+        }
       }
     },
 

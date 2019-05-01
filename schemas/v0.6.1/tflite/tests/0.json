@@ -1,0 +1,41 @@
+{
+	"name": "MobileNet V2 1.0 224",
+	"details": "MobileNet V2 with a width multiplier of 1.0 and an input resolution of 224x224. \n\nMobileNets are based on a streamlined architecture that have depth-wise separable convolutions to build light weight deep neural networks. Trained on ImageNet with categories such as trees, animals, food, vehicles, person etc. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications.",
+	"id": "mobilenet-v2-100-224-unquantized",
+	"version": "1",
+	"author": "Andrew G. Howard, Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, Hartwig Adam",
+	"license": "Apache License. Version 2.0 http://www.apache.org/licenses/LICENSE-2.0",
+	"model": {
+		"file": "mobilenet_v2_1.4_224.tflite",
+		"quantized": false,
+		"type": "image.classification.imagenet",
+		"backend": "tflite"
+	},
+	"inputs": [
+		{
+			"name": "image",
+			"type": "image",
+			"shape": [224,224,3],
+			"format": "RGB",
+			"normalize": {
+				"scale": 0.0078,
+				"bias": {
+					"r": -1,
+					"g": -1,
+					"b": -1
+				}
+			}
+		}
+	],
+	"outputs": [
+		{
+			"name": "classification",
+			"type": "array",
+			"shape": [1,1000],
+			"labels": "labels.txt"
+		}
+	],
+	"options": {
+		"device_position": "back"
+	}
+}

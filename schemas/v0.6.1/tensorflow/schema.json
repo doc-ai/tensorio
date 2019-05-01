@@ -2,7 +2,7 @@
   "$schema":  "http://json-schema.org/draft-07/schema#",
   "$id":      "https://github.com/doc-ai/tensorio/schemas/v0.6.1/tensorflow/schema.json",
 
-  "definitions" : {
+  "definitions": {
     
     "model": {
       "type": "object",

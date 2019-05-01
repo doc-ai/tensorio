@@ -14,6 +14,14 @@ ajv -s schema.json -d model.json
 
 Updates to the schema are listed here.
 
+#### Version 0.7.0
+
+- Add model.modes field, an array of string values with support for the following values:
+	- predict
+	- train
+	- eval
+- Add train field to model.json with support for a train.ops array, which is an array of string values
+
 #### Version 0.6.1
 
 - Initial release

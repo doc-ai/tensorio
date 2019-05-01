@@ -1,0 +1,27 @@
+{
+	"name": "Placeholder model",
+	"details": "Bundle with no model file that should otherwise parse the json and instantiate an empty model.",
+	"id": "placeholder_test",
+	"version": "1",
+	"author": "doc.ai",
+	"license": "",
+	"placeholder": true,
+	"model": {
+		"file": "",
+		"quantized": false
+	},
+	"inputs": [
+		{
+			"name": "input_x",
+			"type": "array",
+			"shape": [1]
+		}
+	],
+	"outputs": [
+		{
+			"name": "output_z",
+			"type": "array",
+			"shape": [1]
+		}
+	]
+}

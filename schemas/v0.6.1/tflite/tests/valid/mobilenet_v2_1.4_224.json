@@ -8,7 +8,6 @@
 	"model": {
 		"file": "mobilenet_v2_1.4_224.tflite",
 		"quantized": false,
-		"type": "image.classification.imagenet",
 		"backend": "tflite"
 	},
 	"inputs": [
@@ -18,12 +17,7 @@
 			"shape": [224,224,3],
 			"format": "RGB",
 			"normalize": {
-				"scale": 0.0078,
-				"bias": {
-					"r": -1,
-					"g": -1,
-					"b": -1
-				}
+				"standard": "[-1,1]"
 			}
 		}
 	],

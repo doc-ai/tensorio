@@ -278,14 +278,14 @@
     "outputs"
   ],
   "properties": {
-    "name":       { "type": "string" },
-    "details":    { "type": "string" },
-    "id":         { "type": "string" },
-    "version":    { "type": "string" },
-    "author":     { "type": "string" },
-    "license":    { "type": "string" },
-    "placehoder": { "type": "boolean" },
-    "model":      { "$ref": "#/definitions/model" },
+    "name":         { "type": "string" },
+    "details":      { "type": "string" },
+    "id":           { "type": "string" },
+    "version":      { "type": "string" },
+    "author":       { "type": "string" },
+    "license":      { "type": "string" },
+    "placeholder":  { "type": "boolean" },
+    "model":        { "$ref": "#/definitions/model" },
     "inputs": {
       "type": "array",
       "items": {

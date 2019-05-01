@@ -260,6 +260,20 @@
           "$ref": "#/definitions/output.image.denormalize"
         }
       }
+    },
+
+    "train": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ops"
+      ],
+      "properties": {
+        "ops": { 
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
     }
 
   },
@@ -278,14 +292,14 @@
     "outputs"
   ],
   "properties": {
-    "name":       { "type": "string" },
-    "details":    { "type": "string" },
-    "id":         { "type": "string" },
-    "version":    { "type": "string" },
-    "author":     { "type": "string" },
-    "license":    { "type": "string" },
-    "placehoder": { "type": "boolean" },
-    "model":      { "$ref": "#/definitions/model" },
+    "name":         { "type": "string" },
+    "details":      { "type": "string" },
+    "id":           { "type": "string" },
+    "version":      { "type": "string" },
+    "author":       { "type": "string" },
+    "license":      { "type": "string" },
+    "placeholder":  { "type": "boolean" },
+    "model":        { "$ref": "#/definitions/model" },
     "inputs": {
       "type": "array",
       "items": {
@@ -304,19 +318,7 @@
         ]
       }
     },
-    "train": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "ops"
-      ],
-      "properties": {
-        "ops": { 
-          "type": "array",
-          "items": { "type": "string" }
-        }
-      }
-    },
-    "options": { "$ref": "#/definitions/options" }
+    "train":    { "$ref": "#/definitions/train"   },
+    "options":  { "$ref": "#/definitions/options" }
   }
 }

@@ -27,8 +27,7 @@
 		{
 			"name": "sigmoid",
 			"type": "array",
-			"shape": [-1,1],
-			"labels": "labels.txt"
+			"shape": [-1,1]
 		}
 	],
 	"options": {

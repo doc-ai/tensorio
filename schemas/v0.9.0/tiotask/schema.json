@@ -1,0 +1,96 @@
+{
+  "$schema":  "http://json-schema.org/draft-07/schema#",
+  "$id":      "https://github.com/doc-ai/tensorio/schemas/v0.9.0/tiotask/schema.json",
+
+  "definitions": {
+    
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": { "type": "string" }
+      }
+    },
+
+    "placeholder.array": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "dtype",
+        "shape",
+        "value"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["array"]
+        },
+        "dtype": {
+          "type": "string",
+          "enum": ["uint8", "float32", "int32", "int64"]
+        },
+        "shape": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "value": {
+          "type": "number"
+        }
+      }
+    },
+
+    "placeholders": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "#/definitions/placeholder.array" }
+        ]
+      }
+    },
+
+    "taskParameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "numEpochs",
+        "batchSize"
+      ],
+      "properties": {
+        "numEpochs":    { "type": "integer" },
+        "batchSize":    { "type": "integer" },
+        "placeholders": { "$ref":  "#/definitions/placeholders" }
+      }
+    }
+
+  },
+
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "details",
+    "id",
+    "task",
+    "model",
+    "taskParameters"
+  ],
+  "properties": {
+    "name":             { "type": "string" },
+    "details":          { "type": "string" },
+    "id":               { "type": "string" },
+    "model":            { "$ref": "#/definitions/model" },
+    "taskParameters":  { "$ref": "#/definitions/taskParameters" },
+    "task":             { 
+      "type": "string",
+      "enum": ["train"] 
+    }
+  }
+}

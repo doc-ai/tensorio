@@ -1,0 +1,29 @@
+{
+  "id": "tio://...",
+  "name": "",
+  "details": "",
+  "task": "train",
+  "model": {
+    "id": "tio://models/<id>/hyperparameters/<id>/checkpoints/<id>"
+  },
+  "taskParameters": {
+    "numEpochs": 1,
+    "batchSize": 8,
+    "placeholders": [
+      {
+        "name": "adam-alpha",
+        "type": "array",
+        "dtype": "float32",
+        "shape": [1],
+        "value": 0.001
+      },
+      {
+        "name": "adam-epsilon",
+        "type": "array",
+        "dtype": "float32",
+        "shape": [1],
+        "value": 0.0001
+      }
+    ]
+  }
+}

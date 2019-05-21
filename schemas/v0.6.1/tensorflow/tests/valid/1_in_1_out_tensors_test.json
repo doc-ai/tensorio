@@ -1,0 +1,27 @@
+{
+	"name": "1 in 1 out tensors test",
+	"details": "A more complex model with a single 3 dimensional tensor for an input and one for an output",
+	"id": "1_in_1_out_tensors_test",
+	"version": "1",
+	"author": "doc.ai",
+	"license": "",
+	"model": {
+		"file": "predict",
+		"quantized": false,
+		"backend": "tensorflow"
+	},
+	"inputs": [
+		{
+			"name": "input",
+			"type": "array",
+			"shape": [3,3,3]
+		}
+	],
+	"outputs": [
+		{
+			"name": "output",
+			"type": "array",
+			"shape": [3,3,3]
+		}
+	]
+}

@@ -1,0 +1,27 @@
+{
+	"name": "1 in 1 out vectors test",
+	"details": "Simple model with a single vector valued input and single vector valued output",
+	"id": "1_in_1_out_vectors_test",
+	"version": "1",
+	"author": "doc.ai",
+	"license": "",
+	"model": {
+		"file": "predict",
+		"quantized": false,
+		"backend": "tensorflow"
+	},
+	"inputs": [
+		{
+			"name": "input",
+			"type": "array",
+			"shape": [1,4]
+		}
+	],
+	"outputs": [
+		{
+			"name": "output",
+			"type": "array",
+			"shape": [1,4]
+		}
+	]
+}

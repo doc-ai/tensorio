@@ -1,0 +1,27 @@
+{
+	"name": "1 in 1 out numeric test",
+	"details": "Simple model with a single valued input and single valued output",
+	"id": "1_in_1_out_number_test",
+	"version": "1",
+	"author": "doc.ai",
+	"license": "",
+	"model": {
+		"file": "model.tflite",
+		"quantized": false,
+		"backend": "tflite"
+	},
+	"inputs": [
+		{
+			"name": "input",
+			"type": "array",
+			"shape": [1]
+		}
+	],
+	"outputs": [
+		{
+			"name": "output",
+			"type": "array",
+			"shape": [1]
+		}
+	]
+}

@@ -1,0 +1,324 @@
+{
+  "$schema":  "http://json-schema.org/draft-07/schema#",
+  "$id":      "https://github.com/doc-ai/tensorio/schemas/v0.7.0/tensorflow/schema.json",
+
+  "definitions": {
+    
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file",
+        "quantized"
+      ],
+      "properties": {
+        "file":       { "type":   "string"      },
+        "quantized":  { "type":   "boolean"     },
+        "type":       { "type":   "string"      },
+        "backend":    { "type":   "string",
+                        "const":  "tensorflow"  },
+        "class":      { "type":   "string"      },
+        "modes":      {
+          "type": "array",
+           "items": {
+            "type": "string",
+            "enum": ["predict", "train"]
+          }
+        }
+      }
+    },
+
+    "options": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "device_position":  { "type": "string" },
+        "output_format":    { "type": "string" }
+      }
+    },
+
+    "input.array.quantize": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "standard": { "type": "string" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "scale":    { "type": "number" },
+            "bias":     { "type": "number" }
+          }
+        }
+      ]
+    },
+
+    "input.array": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "shape"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["array"]
+        },
+        "dtype": {
+          "type": "string",
+          "enum": ["uint8, float32", "int32", "int64"]
+        },
+        "shape": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "quantize": {
+          "$ref": "#/definitions/input.array.quantize"
+        }
+      }
+    },
+
+    "input.image.normalize": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "standard": { "type": "string" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "scale":    { "type": "number" },
+            "bias": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "r":    { "type": "number" },
+                "g":    { "type": "number" },
+                "b":    { "type": "number" }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    "input.image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "shape",
+        "format"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["image"]
+        },
+        "name": {
+          "type": "string"
+        },
+        "shape": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "format": {
+          "type": "string",
+          "enum": ["RGB", "BGR"]
+        },
+        "normalize": {
+          "$ref": "#/definitions/input.image.normalize"
+        }
+      }
+    },
+
+    "output.array.dequantize": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "standard": { "type": "string" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "scale":    { "type": "number" },
+            "bias":     { "type": "number" }
+          }
+        }
+      ]
+    },
+
+    "output.array": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "shape"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["array"]
+        },
+        "dtype": {
+          "type": "string",
+          "enum": ["uint8, float32", "int32", "int64"]
+        },
+        "shape": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "labels": {
+          "type": "string"
+        },
+        "dequantize": {
+          "$ref": "#/definitions/output.array.dequantize"
+        }
+      }
+    },
+
+    "output.image.denormalize": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "standard": { "type": "string" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "scale":    { "type": "number" },
+            "bias": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "r":    { "type": "number" },
+                "g":    { "type": "number" },
+                "b":    { "type": "number" }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    "output.image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "shape",
+        "format"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["image"]
+        },
+        "name": {
+          "type": "string"
+        },
+        "shape": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "format": {
+          "type": "string",
+          "enum": ["RGB", "BGR"]
+        },
+        "denormalize": {
+          "$ref": "#/definitions/output.image.denormalize"
+        }
+      }
+    },
+
+    "train": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ops"
+      ],
+      "properties": {
+        "ops": { 
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+
+  },
+  
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "details",
+    "id",
+    "version",
+    "author",
+    "license",
+    "model",
+    "inputs",
+    "outputs"
+  ],
+  "properties": {
+    "name":         { "type": "string" },
+    "details":      { "type": "string" },
+    "id":           { "type": "string" },
+    "version":      { "type": "string" },
+    "author":       { "type": "string" },
+    "license":      { "type": "string" },
+    "placeholder":  { "type": "boolean" },
+    "model":        { "$ref": "#/definitions/model" },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "#/definitions/input.array" },
+          { "$ref": "#/definitions/input.image" }
+        ]
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "#/definitions/output.array" },
+          { "$ref": "#/definitions/output.image" }
+        ]
+      }
+    },
+    "train":    { "$ref": "#/definitions/train"   },
+    "options":  { "$ref": "#/definitions/options" }
+  }
+}

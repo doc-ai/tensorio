@@ -1,0 +1,29 @@
+{
+	"name": "1 in 1 out numeric test",
+	"details": "Simple model with a single valued input and single valued output",
+	"id": "1_in_1_out_number_test",
+	"version": "1",
+	"author": "doc.ai",
+	"license": "",
+	"model": {
+		"file": "predict",
+		"quantized": false,
+		"backend": "tensorflow"
+	},
+	"inputs": [
+		{
+			"name": "input",
+			"type": "array",
+			"dtype": "int64",
+			"shape": [1]
+		}
+	],
+	"outputs": [
+		{
+			"name": "output",
+			"type": "array",
+			"dtype": "int64",
+			"shape": [1]
+		}
+	]
+}

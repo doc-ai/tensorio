@@ -9,6 +9,7 @@ class TestSchema(unittest.TestCase):
   FILE_DIR = os.path.dirname(os.path.abspath(__file__))
   VERSION_DIRS = glob.glob('v*')
   BACKENDS = [
+    "tiotask",
     "tensorflow",
     "tflite"
   ]

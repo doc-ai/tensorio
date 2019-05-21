@@ -2,6 +2,7 @@
   "id": "tio://...",
   "name": "",
   "details": "",
+  "task": "train",
   "model": {
     "id": "tio://models/<id>/hyperparameters/<id>/checkpoints/<id>"
   },

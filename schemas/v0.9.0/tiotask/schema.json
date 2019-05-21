@@ -78,6 +78,7 @@
     "name",
     "details",
     "id",
+    "task",
     "model",
     "hyperparameters"
   ],
@@ -86,7 +87,10 @@
     "details":          { "type": "string" },
     "id":               { "type": "string" },
     "model":            { "$ref": "#/definitions/model" },
-    "hyperparameters":  { "$ref": "#/definitions/hyperparameters" }
+    "hyperparameters":  { "$ref": "#/definitions/hyperparameters" },
+    "task":             { 
+      "type": "string",
+      "enum": ["train"] 
+    }
   }
-
 }

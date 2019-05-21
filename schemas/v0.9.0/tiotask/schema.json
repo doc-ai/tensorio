@@ -56,7 +56,7 @@
       }
     },
 
-    "hyperparameters": {
+    "taskParameters": {
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -80,14 +80,14 @@
     "id",
     "task",
     "model",
-    "hyperparameters"
+    "taskParameters"
   ],
   "properties": {
     "name":             { "type": "string" },
     "details":          { "type": "string" },
     "id":               { "type": "string" },
     "model":            { "$ref": "#/definitions/model" },
-    "hyperparameters":  { "$ref": "#/definitions/hyperparameters" },
+    "taskParameters":  { "$ref": "#/definitions/taskParameters" },
     "task":             { 
       "type": "string",
       "enum": ["train"] 

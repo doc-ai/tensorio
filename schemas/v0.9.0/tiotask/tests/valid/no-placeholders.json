@@ -6,7 +6,7 @@
   "model": {
     "id": "tio://models/<id>/hyperparameters/<id>/checkpoints/<id>"
   },
-  "hyperparameters": {
+  "taskParameters": {
     "numEpochs": 1,
     "batchSize": 8
   }

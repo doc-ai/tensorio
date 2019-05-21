@@ -1,0 +1,12 @@
+{
+  "id": "tio://...",
+  "name": "",
+  "details": "",
+  "model": {
+    "id": "tio://models/<id>/hyperparameters/<id>/checkpoints/<id>"
+  },
+  "hyperparameters": {
+    "numEpochs": 1,
+    "batchSize": 8
+  }
+}

@@ -39,15 +39,17 @@
   "required": [
     "taskId",
     "numSamples",
+    "output",
     "taskParameters",
     "deviceInfo",
     "clientId"
   ],
   "properties": {
-    "taskId":           { "type": "string" },
-    "clientId":         { "type": "string" },
+    "taskId":           { "type": "string"  },
+    "clientId":         { "type": "string"  },
     "numSamples":       { "type": "integer" },
+    "output":           { "type": "object"  },
     "taskParameters":   { "$ref": "#/definitions/taskParameters" },
-    "deviceInfo":       { "$ref": "#/definitions/deviceInfo" }
+    "deviceInfo":       { "$ref": "#/definitions/deviceInfo"     }
   }
 }

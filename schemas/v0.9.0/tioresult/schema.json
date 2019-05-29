@@ -26,8 +26,8 @@
         "tensorIOVersion"
       ],
       "properties": {
-        "deviceType":    { "type": "string" },
-        "osVersion":    { "type": "string" },
+        "deviceType":         { "type": "string" },
+        "osVersion":          { "type": "string" },
         "tensorIOVersion":    { "type": "string" }
       }
     }
@@ -43,9 +43,9 @@
     "deviceInfo"
   ],
   "properties": {
-    "taskId":             { "type": "string" },
-    "numSamples":          { "type": "integer" },
-    "taskParameters":  { "$ref": "#/definitions/taskParameters" },
-    "deviceInfo":            { "$ref": "#/definitions/deviceInfo" }
+    "taskId":           { "type": "string" },
+    "numSamples":       { "type": "integer" },
+    "taskParameters":   { "$ref": "#/definitions/taskParameters" },
+    "deviceInfo":       { "$ref": "#/definitions/deviceInfo" }
   }
 }

@@ -1,5 +1,6 @@
 {
   "taskId": "task-123",
+  "clientId": "UUID",
   "numSamples": 123,
   "taskParameters": {
     "batchSize": 10,

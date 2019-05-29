@@ -46,6 +46,6 @@
     "taskId":             { "type": "string" },
     "numSamples":          { "type": "integer" },
     "taskParameters":  { "$ref": "#/definitions/taskParameters" },
-    "model":            { "$ref": "#/definitions/deviceInfo" },
+    "deviceInfo":            { "$ref": "#/definitions/deviceInfo" },
   }
 }

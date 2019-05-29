@@ -1,0 +1,51 @@
+{
+  "$schema":  "http://json-schema.org/draft-07/schema#",
+  "$id":      "https://github.com/doc-ai/tensorio/schemas/v0.9.0/tioresult/schema.json",
+
+  "definitions": {
+
+    "taskParameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "numEpochs",
+        "batchSize"
+      ],
+      "properties": {
+        "numEpochs":    { "type": "integer" },
+        "batchSize":    { "type": "integer" }
+      }
+    },
+
+    "deviceInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "deviceType",
+        "osVersion",
+        "tensorIOVersion"
+      ],
+      "properties": {
+        "deviceType":    { "type": "string" },
+        "osVersion":    { "type": "string" },
+        "tensorIOVersion":    { "type": "string" }
+      }
+    }
+
+  },
+
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "taskId",
+    "numSamples",
+    "taskParamaters",
+    "deviceInfo"
+  ],
+  "properties": {
+    "taskId":             { "type": "string" },
+    "numSamples":          { "type": "integer" },
+    "taskParameters":  { "$ref": "#/definitions/taskParameters" },
+    "model":            { "$ref": "#/definitions/deviceInfo" },
+  }
+}

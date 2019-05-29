@@ -1,0 +1,13 @@
+{
+  "taskId": "task-123",
+  "numSamples": 123,
+  "taskParamaters": {
+    "batchSize": 10,
+    "numEpochs": 5
+  },
+  "deviceInfo": {
+    "deviceType": "iPhone X",
+    "osVersion": "iOS 12.1",
+    "tensorIOVersion": "0.8.1"
+  }
+}

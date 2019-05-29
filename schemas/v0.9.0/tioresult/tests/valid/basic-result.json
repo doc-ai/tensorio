@@ -1,7 +1,7 @@
 {
   "taskId": "task-123",
   "numSamples": 123,
-  "taskParamaters": {
+  "taskParameters": {
     "batchSize": 10,
     "numEpochs": 5
   },

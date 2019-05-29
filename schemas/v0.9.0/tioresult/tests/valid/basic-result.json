@@ -13,5 +13,8 @@
     "deviceType": "iPhone X",
     "osVersion": "iOS 12.1",
     "tensorIOVersion": "0.8.1"
+  },
+  "profiling": {
+    "cpuTime": 1200.50
   }
 }

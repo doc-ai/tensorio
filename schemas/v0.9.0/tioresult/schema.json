@@ -30,7 +30,18 @@
         "osVersion":          { "type": "string" },
         "tensorIOVersion":    { "type": "string" }
       }
-    }
+    },
+
+    "profiling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cpuTime"
+      ],
+      "properties": {
+        "cpuTime":            { "type": "number" }
+      }
+   }
 
   },
 
@@ -42,7 +53,8 @@
     "output",
     "taskParameters",
     "deviceInfo",
-    "clientId"
+    "clientId",
+    "profiling"
   ],
   "properties": {
     "taskId":           { "type": "string"  },
@@ -50,6 +62,7 @@
     "numSamples":       { "type": "integer" },
     "output":           { "type": "object"  },
     "taskParameters":   { "$ref": "#/definitions/taskParameters" },
-    "deviceInfo":       { "$ref": "#/definitions/deviceInfo"     }
+    "deviceInfo":       { "$ref": "#/definitions/deviceInfo"     },
+    "profiling":        { "$ref": "#/definitions/profiling"     }
   }
 }

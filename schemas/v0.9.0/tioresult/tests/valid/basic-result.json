@@ -1,0 +1,20 @@
+{
+  "taskId": "task-123",
+  "clientId": "UUID",
+  "numSamples": 123,
+  "output": {
+    "loss": 0.00412
+  },
+  "taskParameters": {
+    "batchSize": 10,
+    "numEpochs": 5
+  },
+  "deviceInfo": {
+    "deviceType": "iPhone X",
+    "osVersion": "iOS 12.1",
+    "tensorIOVersion": "0.8.1"
+  },
+  "profiling": {
+    "cpuTime": 1200.50
+  }
+}

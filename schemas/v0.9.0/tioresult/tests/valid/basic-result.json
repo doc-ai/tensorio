@@ -1,16 +1,9 @@
 {
   "taskId": "task-123",
-<<<<<<< HEAD
   "clientId": "UUID2",
   "numSamples": 123,
   "output": {
     "Mean": 0.01445
-=======
-  "clientId": "UUID",
-  "numSamples": 123,
-  "output": {
-    "loss": 0.00412
->>>>>>> c16880064eafc38fd46b5f77aed211da1508110d
   },
   "taskParameters": {
     "batchSize": 10,

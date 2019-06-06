@@ -4,16 +4,29 @@
 
   "definitions": {
 
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Mean"
+      ],
+      "properties": {
+        "Mean":    { "type": "number" }
+      }
+    },
+
     "taskParameters": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "numEpochs",
-        "batchSize"
+        "batchSize",
+        "placeholders"
       ],
       "properties": {
         "numEpochs":    { "type": "integer" },
-        "batchSize":    { "type": "integer" }
+        "batchSize":    { "type": "integer" },
+        "placeholders": { "type": "null"}
       }
     },
 
@@ -30,6 +43,17 @@
         "osVersion":    { "type": "string" },
         "tensorIOVersion":    { "type": "string" }
       }
+    },
+
+    "profiling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cpuTime"
+      ],
+      "properties": {
+        "cpuTime":    { "type": "number" }
+      }
     }
 
   },
@@ -44,8 +68,11 @@
   ],
   "properties": {
     "taskId":             { "type": "string" },
+    "clientId":           { "type": "string" },
     "numSamples":          { "type": "integer" },
+    "output":  { "$ref": "#/definitions/output" },
     "taskParameters":  { "$ref": "#/definitions/taskParameters" },
-    "deviceInfo":            { "$ref": "#/definitions/deviceInfo" }
+    "deviceInfo":            { "$ref": "#/definitions/deviceInfo" },
+    "profiling":            { "$ref": "#/definitions/profiling" }
   }
 }

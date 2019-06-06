@@ -39,8 +39,8 @@
         "tensorIOVersion"
       ],
       "properties": {
-        "deviceType":    { "type": "string" },
-        "osVersion":    { "type": "string" },
+        "deviceType":         { "type": "string" },
+        "osVersion":          { "type": "string" },
         "tensorIOVersion":    { "type": "string" }
       }
     },
@@ -63,8 +63,11 @@
   "required": [
     "taskId",
     "numSamples",
+    "output",
     "taskParameters",
-    "deviceInfo"
+    "deviceInfo",
+    "clientId",
+    "profiling"
   ],
   "properties": {
     "taskId":             { "type": "string" },

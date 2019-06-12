@@ -6,7 +6,7 @@ TensorIO is a lightweight, cross-platform library for on-device machine learning
 
 The library provides a declarative input-output interface to an underlying machine learning model while also providing a structure for packaging models, metadata about them, and related assets into a single, deliverable unit. TensorIO makes it easy for researchers and application developers to use their models on mobile phones and it simplifies the process of deploying models to mobile devices.
 
-Our most recent release of TensorIO includes support for delpoying models with the help of serverside infrastructure as well as support for federated learning, in which clients retrieve learning tasks from a server, train on data that remains local to the device, and return updated weights for later aggregation into a new model.
+Our most recent release of TensorIO includes support for deploying models with the help of serverside infrastructure as well as support for federated learning, in which clients retrieve learning tasks from a server, train on data that remains local to the device, and return updated weights for later aggregation into a new model.
 
 TensorIO is currently available for iOS, Android, and React Native for iOS. Android support for React Native is forthcoming. TensorIO has full support for TensorFlow on iOS and TensorFlow Lite support on both iOS and Android, and it may be extended to support other machine learning libraries.
 
@@ -142,7 +142,7 @@ Our backend service for deploying models to device. Client APIs in TensorIO comm
 
 [TensorIO Flea](https://github.com/doc-ai/tensorio-models)
 
-Flea (Federated LEArning) is our backend service for conducting federated training rounds. Client APIs in TensorIO communicate with a TensorIO Flea server to retrieve federated learning tasks and returns updated model weights for later aggregation into a new prediction model.
+Flea (Federated LEArning) is our backend service for conducting federated training rounds. Client APIs in TensorIO communicate with a TensorIO Flea server to retrieve federated learning tasks and return updated model weights for later aggregation into a new prediction model.
 
 ### Tools
 

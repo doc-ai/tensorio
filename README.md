@@ -1,27 +1,24 @@
 ### Introduction
 
+Declarative, Deployable, Federated, On-Device Machine Learning
+
 TensorIO is a lightweight, cross-platform library for on-device machine learning, bringing the power of TensorFlow and TensorFlow Lite to iOS, Android, and React Native applications. 
 
 The library provides a declarative input-output interface to an underlying machine learning model while also providing a structure for packaging models, metadata about them, and related assets into a single, deliverable unit. TensorIO makes it easy for researchers and application developers to use their models on mobile phones and it simplifies the process of deploying models to mobile devices.
 
-TensorIO is currently available for iOS, Android, and React Native for iOS. Android support for React Native is forthcoming. TensorIO has full support for TensorFlow on iOS and TensorFlow Lite support on both iOS and Android, and it may be easily extended to support other machine learning libraries.
+Our most recent release of TensorIO includes support for delpoying models with the help of serverside infrastructure as well as support for federated learning, in which clients retrieve learning tasks from a server, train on data that remains local to the device, and return updated weights for later aggregation into a new model.
+
+TensorIO is currently available for iOS, Android, and React Native for iOS. Android support for React Native is forthcoming. TensorIO has full support for TensorFlow on iOS and TensorFlow Lite support on both iOS and Android, and it may be extended to support other machine learning libraries.
 
 ### License
 
 All TensorIO, Net Runner, and related code is open source under an Apache 2 license. Copyright [doc.ai](https://doc.ai), 2018-present.
 
-### Core Contributors
-
-- [Philip Dow](https://github.com/phildow)
-- [Neeraj Kashyap](https://github.com/nkashy1)
-- [Sam Leroux](https://github.com/SamLeroux)
-- [Aria Vaghef](https://github.com/aria-doc-ai)
-
 ### Example Usage
 
 TensorIO implements no machine learning itself. Rather it relies on the power of an underlying machine learning library while taking care of the boilerplate code that is needed to get data into and out of a model. Such preparation includes quantization of inputs, image croping and scaling, normalization, byte order operations, and other transformations. 
 
-Library adopters describe a model's expectations for inputs and outputs using json and then simply send native data types into a model and receive native data types back from it. TensorIO ensures the data is correctly pre- and postprocessed and that bytes are moved into and out of tensor buffers correctly.
+Library adopters describe a model's expectations for inputs and outputs using JSON and then send native data types into a model and receive native data types back from it. TensorIO ensures the data is correctly pre- and postprocessed and that bytes are moved into and out of tensor buffers correctly.
 
 Given a TensorFlow Lite MobileNet ImageNet classification model that has been packaged into a TensorIO bundle ([bundled here](https://github.com/doc-ai/tensorio/tree/master/models/image-classification.tiobundle)), the model.json file will look like:
 
@@ -137,6 +134,16 @@ Our React Native bindings for TensorIO, with full support for the iOS version. R
 
 An example application demonstrating how to use the TensorIO module in a React Native application, with a MobileNet ImageNet classification model.
 
+### Deployment and Federated Learning
+
+[TensorIO Models](https://github.com/doc-ai/tensorio-models)
+
+Our backend service for deploying models to device. Client APIs in TensorIO communicate with a TensorIO Models server to browse, retrieve, and update models.
+
+[TensorIO Flea](https://github.com/doc-ai/tensorio-models)
+
+Flea (Federated LEArning) is our backend service for conducting federated training rounds. Client APIs in TensorIO communicate with a TensorIO Flea server to retrieve federated learning tasks and return updated model weights for later aggregation into a new prediction model.
+
 ### Tools
 
 [TensorIO Bundler](https://github.com/doc-ai/tensorio-bundler)
@@ -156,3 +163,10 @@ Unofficial build of the full tensorflow.framework (not TFLite) for iOS that we w
 [TensorFlow Cocoapod](https://github.com/doc-ai/tensorio-tensorflow-ios)
 
 Unofficial full build of TensorFlow in a self-contained CocoaPod that we will be using in the TensorIO/TensorFlow subspec. Vends the tensorflow, protobuf, and nysnc static libraries and all headers.
+
+### Core Contributors
+
+- [Philip Dow](https://github.com/phildow)
+- [Neeraj Kashyap](https://github.com/nkashy1)
+- [Sam Leroux](https://github.com/SamLeroux)
+- [Aria Vaghef](https://github.com/aria-doc-ai)

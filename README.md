@@ -1,26 +1,34 @@
 ### Introduction
 
-Declarative, Deployable, Federated, On-Device Machine Learning
+TensorIO is a lightweight, cross-platform library for on-device machine learning, bringing the power of TensorFlow and TensorFlow Lite to iOS, Android, and React Native applications. TensorIO does not implement any machine learning itself but works with an underlying library such as TensorFlow to simplify the process of deploying and using models on mobile phones.
 
-TensorIO is a lightweight, cross-platform library for on-device machine learning, bringing the power of TensorFlow and TensorFlow Lite to iOS, Android, and React Native applications. 
+#### Tensor/IO is Declarative
 
-The library provides a declarative input-output interface to an underlying machine learning model while also providing a structure for packaging models, metadata about them, and related assets into a single, deliverable unit. TensorIO makes it easy for researchers and application developers to use their models on mobile phones and it simplifies the process of deploying models to mobile devices.
+TensorIO is above all a declarative interface to your model. This means that you describe the input and output layers to your model using a plain-text language and TensorIO takes care of the transformations needed to prepare inputs for the model and to read outputs back out of it, allowing you to focus on what you know instead of a low-level C++ interface.
 
-Our most recent release of TensorIO includes support for deploying models with the help of serverside infrastructure as well as support for federated learning, in which clients retrieve learning tasks from a server, train on data that remains local to the device, and return updated weights for later aggregation into a new model.
+#### On-Device
 
-TensorIO is currently available for iOS, Android, and React Native for iOS. Android support for React Native is forthcoming. TensorIO has full support for TensorFlow on iOS and TensorFlow Lite support on both iOS and Android, and it may be extended to support other machine learning libraries.
+TensorIO runs on iOS and Android mobile phones, with bridging for React Native, and it runs the same underlying model on every OS without a need to convert models to CoreML or MLKit. You'll choose a specific backend for your use case, such as TensorFlow or TensorFlow Lite, and the library takes care of interacting with it in the language of your choice: Objective-C, Swift, Java, Kotlin, or JavaScript.
 
-### License
+#### Inference
 
-All TensorIO, Net Runner, and related code is open source under an Apache 2 license. Copyright [doc.ai](https://doc.ai), 2018-present.
+Prediction with TensorIO can often be done with as little as five lines of code. The TensorFlow Lite backend supports deep networks and a range of convolutional models, and the full TensorFlow backend supports almost any network you can build in python. Performance is impressive. MobileNet models execute inference on the iPhone X in ~30ms and can be run in real-time.
+
+#### Training
+
+With support for the full TensorFlow backend you can train models on device and export their updated weights as a checkpoint, which can then be used in a prediction model. All without ever leaving the phone. Use the same declarative interface to specificy your training inputs and outputs, evaluation metric, and training operation, and to inject placeholder values into your model in order to support on-device hyperparamter tuning.
+
+#### Deployment
+
+Our packaging makes it easy to ship models with your application, but the dynamically generated model interfaces and client-server code also allow you to retrieve and update models in deployed applications. No need to write new code or recompile the app. Our TensorIO-Models repo listed below includes the serverside application to support in-production deployments.
+
+#### Federated Learning
+
+Building on support for training and in-production deployment, we have also implemented a federated learning system. Clients check for federated training tasks at a central location and then download and train models locally. Local updates are returned to backend infrastructure and aggregated to create a new global model, which is sent back to local devices for prediction and evaluation. The federated approach helps us to fulfill one of our core missions: to preserve the privacy of data.
 
 ### Example Usage
 
-TensorIO implements no machine learning itself. Rather it relies on the power of an underlying machine learning library while taking care of the boilerplate code that is needed to get data into and out of a model. Such preparation includes quantization of inputs, image croping and scaling, normalization, byte order operations, and other transformations. 
-
-Library adopters describe a model's expectations for inputs and outputs using JSON and then send native data types into a model and receive native data types back from it. TensorIO ensures the data is correctly pre- and postprocessed and that bytes are moved into and out of tensor buffers correctly.
-
-Given a TensorFlow Lite MobileNet ImageNet classification model that has been packaged into a TensorIO bundle ([bundled here](https://github.com/doc-ai/tensorio/tree/master/models/image-classification.tiobundle)), the model.json file will look like:
+Given a TensorFlow Lite MobileNet ImageNet classification model that has been packaged into a TensorIO bundle ([bundled here](https://github.com/doc-ai/tensorio/tree/master/models/image-classification.tiobundle)), the model.json looks like:
 
 ```json
 {
@@ -59,7 +67,7 @@ Given a TensorFlow Lite MobileNet ImageNet classification model that has been pa
 
 ```
 
-This model may be used in iOS as follows:
+This model is used in iOS as follows:
 
 ```objc
 UIImage *image = [UIImage imageNamed:@"example-image"];
@@ -104,7 +112,11 @@ RNTensorIO.run({
 });
 ```
 
-### iOS
+### License and Open Source
+
+All TensorIO, Net Runner, and related code is open source under an Apache 2 license. Copyright [doc.ai](https://doc.ai), 2018-present.
+
+#### iOS
 
 [TensorIO for iOS](https://github.com/doc-ai/tensorio-ios)
 
@@ -114,7 +126,7 @@ Our Objective-C++ implementation of TensorIO, with support for Swift. Requires i
 
 Net Runner is our iOS application environment for running and evaluating computer vision machine learning models packaged for TensorIO. Models may be run on live camera input or bulk evaluated against album photos. New models may be downloaded directly into the application. Net Runner is available for download in the [iOS App Store](https://itunes.apple.com/us/app/net-runner-by-doc-ai/id1435828634?mt=8).
 
-### Android
+#### Android
 
 [TensorIO for Android](https://github.com/doc-ai/tensorio-android)
 
@@ -124,7 +136,7 @@ Our Java implemention of TensorIO for Android. Requires Java 8.
 
 Net Runner is our Android application environment for running computer vision models on device, including support for GPU acceleration.
 
-### React Native
+#### React Native
 
 [TensorIO for React Native](https://github.com/doc-ai/react-native-tensorio)
 
@@ -134,7 +146,7 @@ Our React Native bindings for TensorIO, with full support for the iOS version. R
 
 An example application demonstrating how to use the TensorIO module in a React Native application, with a MobileNet ImageNet classification model.
 
-### Deployment and Federated Learning
+#### Deployment and Federated Learning
 
 [TensorIO Models](https://github.com/doc-ai/tensorio-models)
 
@@ -144,13 +156,13 @@ Our backend service for deploying models to device. Client APIs in TensorIO comm
 
 Flea (Federated LEArning) is our backend service for conducting federated training rounds. Client APIs in TensorIO communicate with a TensorIO Flea server to retrieve federated learning tasks and return updated model weights for later aggregation into a new prediction model.
 
-### Tools
+#### Tools
 
 [TensorIO Bundler](https://github.com/doc-ai/tensorio-bundler)
 
 Our bundling utility for packaging models into the TensorIO format. Includes a Slack bot, Bundlebot, that helps convert checkpointed models to the TensorIO format and deploy them to device in under a minute.
 
-### Additional Repositories
+#### Additional Repositories
 
 [TensorFlow @ doc.ai](https://github.com/doc-ai/tensorflow)
 

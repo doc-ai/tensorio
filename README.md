@@ -142,7 +142,7 @@ Our backend service for deploying models to device. Client APIs in TensorIO comm
 
 [TensorIO Flea](https://github.com/doc-ai/tensorio-models)
 
-Flea (Federated LEArning) is our backend service for conducting federated training rounds. Client APIs in TensorIO communicate with a TensorIO Flea server to retrieve federated learning tasks and return updated model weights for later aggregation into a new prediction model.
+Flea (Federated LEArning) is our backend service for conducting federated training rounds. Client APIs in TensorIO communicate with a TensorIO Flea server to retrieve federated learning tasks and returns updated model weights for later aggregation into a new prediction model.
 
 ### Tools
 

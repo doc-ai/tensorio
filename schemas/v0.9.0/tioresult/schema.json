@@ -4,16 +4,22 @@
 
   "definitions": {
 
+    "output": {
+      "type": "object"
+    },
+
     "taskParameters": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "numEpochs",
-        "batchSize"
+        "batchSize",
+        "placeholders"
       ],
       "properties": {
         "numEpochs":    { "type": "integer" },
-        "batchSize":    { "type": "integer" }
+        "batchSize":    { "type": "integer" },
+        "placeholders": { "type": "null"}
       }
     },
 
@@ -39,9 +45,9 @@
         "cpuTime"
       ],
       "properties": {
-        "cpuTime":            { "type": "number" }
+        "cpuTime":    { "type": "number" }
       }
-   }
+    }
 
   },
 
@@ -57,12 +63,12 @@
     "profiling"
   ],
   "properties": {
-    "taskId":           { "type": "string"  },
-    "clientId":         { "type": "string"  },
+    "taskId":           { "type": "string" },
+    "clientId":         { "type": "string" },
     "numSamples":       { "type": "integer" },
-    "output":           { "type": "object"  },
+    "output":           { "$ref": "#/definitions/output" },
     "taskParameters":   { "$ref": "#/definitions/taskParameters" },
-    "deviceInfo":       { "$ref": "#/definitions/deviceInfo"     },
-    "profiling":        { "$ref": "#/definitions/profiling"     }
+    "deviceInfo":       { "$ref": "#/definitions/deviceInfo" },
+    "profiling":        { "$ref": "#/definitions/profiling" }
   }
 }

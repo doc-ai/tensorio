@@ -1,13 +1,14 @@
 {
   "taskId": "task-123",
-  "clientId": "UUID",
+  "clientId": "UUID2",
   "numSamples": 123,
   "output": {
-    "loss": 0.00412
+    "Mean": 0.01445
   },
   "taskParameters": {
     "batchSize": 10,
-    "numEpochs": 5
+    "numEpochs": 5,
+    "placeholders" : null
   },
   "deviceInfo": {
     "deviceType": "iPhone X",

@@ -5,14 +5,7 @@
   "definitions": {
 
     "output": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "Mean"
-      ],
-      "properties": {
-        "Mean":    { "type": "number" }
-      }
+      "type": "object"
     },
 
     "taskParameters": {
@@ -70,12 +63,12 @@
     "profiling"
   ],
   "properties": {
-    "taskId":             { "type": "string" },
-    "clientId":           { "type": "string" },
-    "numSamples":          { "type": "integer" },
-    "output":  { "$ref": "#/definitions/output" },
-    "taskParameters":  { "$ref": "#/definitions/taskParameters" },
-    "deviceInfo":            { "$ref": "#/definitions/deviceInfo" },
-    "profiling":            { "$ref": "#/definitions/profiling" }
+    "taskId":           { "type": "string" },
+    "clientId":         { "type": "string" },
+    "numSamples":       { "type": "integer" },
+    "output":           { "$ref": "#/definitions/output" },
+    "taskParameters":   { "$ref": "#/definitions/taskParameters" },
+    "deviceInfo":       { "$ref": "#/definitions/deviceInfo" },
+    "profiling":        { "$ref": "#/definitions/profiling" }
   }
 }

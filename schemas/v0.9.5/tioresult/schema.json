@@ -42,10 +42,12 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "cpuTime"
+        "cpuTime",
+        "maxMemory"
       ],
       "properties": {
-        "cpuTime":    { "type": "number" }
+        "cpuTime":    { "type": "number" },
+        "maxMemory":  { "type": "number" }
       }
     }
 

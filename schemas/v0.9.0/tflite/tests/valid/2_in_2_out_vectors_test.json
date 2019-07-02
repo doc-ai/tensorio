@@ -1,0 +1,38 @@
+{
+	"name": "2 in 2 out vectors test",
+	"details": "Simple model with two vector input nodes and two vector output nodes",
+	"id": "2_in_2_out_vectors_test",
+	"version": "1",
+	"author": "doc.ai",
+	"license": "",
+	"model": {
+		"file": "model.tflite",
+		"quantized": false,
+		"backend": "tflite",
+		"modes": ["predict"]
+	},
+	"inputs": [
+		{
+			"name": "input1",
+			"type": "array",
+			"shape": [1,4]
+		},
+		{
+			"name": "input2",
+			"type": "array",
+			"shape": [1,4]
+		}
+	],
+	"outputs": [
+		{
+			"name": "output1",
+			"type": "array",
+			"shape": [1,1]
+		},
+		{
+			"name": "output2",
+			"type": "array",
+			"shape": [1,1]
+		}
+	]
+}

@@ -1,0 +1,74 @@
+{
+  "$schema":  "http://json-schema.org/draft-07/schema#",
+  "$id":      "https://github.com/doc-ai/tensorio/schemas/v0.9.0/tioresult/schema.json",
+
+  "definitions": {
+
+    "output": {
+      "type": "object"
+    },
+
+    "taskParameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "numEpochs",
+        "batchSize",
+        "placeholders"
+      ],
+      "properties": {
+        "numEpochs":    { "type": "integer" },
+        "batchSize":    { "type": "integer" },
+        "placeholders": { "type": "null"}
+      }
+    },
+
+    "deviceInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "deviceType",
+        "osVersion",
+        "tensorIOVersion"
+      ],
+      "properties": {
+        "deviceType":         { "type": "string" },
+        "osVersion":          { "type": "string" },
+        "tensorIOVersion":    { "type": "string" }
+      }
+    },
+
+    "profiling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cpuTime"
+      ],
+      "properties": {
+        "cpuTime":    { "type": "number" }
+      }
+    }
+
+  },
+
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "taskId",
+    "numSamples",
+    "output",
+    "taskParameters",
+    "deviceInfo",
+    "clientId",
+    "profiling"
+  ],
+  "properties": {
+    "taskId":           { "type": "string" },
+    "clientId":         { "type": "string" },
+    "numSamples":       { "type": "integer" },
+    "output":           { "$ref": "#/definitions/output" },
+    "taskParameters":   { "$ref": "#/definitions/taskParameters" },
+    "deviceInfo":       { "$ref": "#/definitions/deviceInfo" },
+    "profiling":        { "$ref": "#/definitions/profiling" }
+  }
+}

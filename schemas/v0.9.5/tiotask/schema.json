@@ -61,8 +61,7 @@
       "additionalProperties": false,
       "required": [
         "numEpochs",
-        "batchSize",
-        "shuffle"
+        "batchSize"
       ],
       "properties": {
         "numEpochs":    { "type": "integer" },

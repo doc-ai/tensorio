@@ -61,11 +61,13 @@
       "additionalProperties": false,
       "required": [
         "numEpochs",
-        "batchSize"
+        "batchSize",
+        "shuffle"
       ],
       "properties": {
         "numEpochs":    { "type": "integer" },
         "batchSize":    { "type": "integer" },
+        "shuffle":      { "type": "boolean" },
         "placeholders": { "$ref":  "#/definitions/placeholders" }
       }
     }

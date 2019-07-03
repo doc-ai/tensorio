@@ -76,7 +76,7 @@
         },
         "dtype": {
           "type": "string",
-          "enum": ["uint8, float32"]
+          "enum": ["uint8", "float32"]
         },
         "shape": {
           "type": "array",
@@ -148,6 +148,34 @@
       }
     },
 
+    "input.string": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "shape",
+        "dtype"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["string"]
+        },
+        "dtype": {
+          "type": "string",
+          "enum": ["uint8", "float32"]
+        },
+        "shape": {
+          "type": "array",
+          "items": { "type": "integer" }
+        }
+      }
+    },
+
     "output.array.dequantize": {
       "type": "object",
       "oneOf": [
@@ -187,7 +215,7 @@
         },
         "dtype": {
           "type": "string",
-          "enum": ["uint8, float32"]
+          "enum": ["uint8", "float32"]
         },
         "shape": {
           "type": "array",
@@ -260,6 +288,34 @@
           "$ref": "#/definitions/output.image.denormalize"
         }
       }
+    },
+
+    "output.string": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "shape",
+        "dtype"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["string"]
+        },
+        "dtype": {
+          "type": "string",
+          "enum": ["uint8", "float32"]
+        },
+        "shape": {
+          "type": "array",
+          "items": { "type": "integer" }
+        }
+      }
     }
 
   },
@@ -290,8 +346,9 @@
       "type": "array",
       "items": {
         "oneOf": [
-          { "$ref": "#/definitions/input.array" },
-          { "$ref": "#/definitions/input.image" }
+          { "$ref": "#/definitions/input.array"  },
+          { "$ref": "#/definitions/input.image"  },
+          { "$ref": "#/definitions/input.string" }
         ]
       }
     },
@@ -299,8 +356,9 @@
       "type": "array",
       "items": {
         "oneOf": [
-          { "$ref": "#/definitions/output.array" },
-          { "$ref": "#/definitions/output.image" }
+          { "$ref": "#/definitions/output.array"  },
+          { "$ref": "#/definitions/output.image"  },
+          { "$ref": "#/definitions/output.string" }
         ]
       }
     },

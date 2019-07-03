@@ -148,6 +148,34 @@
       }
     },
 
+    "input.string": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "shape",
+        "dtype"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["string"]
+        },
+        "dtype": {
+          "type": "string",
+          "enum": ["uint8", "float32", "int32", "int64"]
+        },
+        "shape": {
+          "type": "array",
+          "items": { "type": "integer" }
+        }
+      }
+    },
+
     "output.array.dequantize": {
       "type": "object",
       "oneOf": [
@@ -262,6 +290,34 @@
       }
     },
 
+    "output.string": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "shape",
+        "dtype"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["string"]
+        },
+        "dtype": {
+          "type": "string",
+          "enum": ["uint8", "float32", "int32", "int64"]
+        },
+        "shape": {
+          "type": "array",
+          "items": { "type": "integer" }
+        }
+      }
+    },
+
     "train": {
       "type": "object",
       "additionalProperties": false,
@@ -304,8 +360,9 @@
       "type": "array",
       "items": {
         "oneOf": [
-          { "$ref": "#/definitions/input.array" },
-          { "$ref": "#/definitions/input.image" }
+          { "$ref": "#/definitions/input.array"  },
+          { "$ref": "#/definitions/input.image"  },
+          { "$ref": "#/definitions/input.string" }
         ]
       }
     },
@@ -313,8 +370,9 @@
       "type": "array",
       "items": {
         "oneOf": [
-          { "$ref": "#/definitions/output.array" },
-          { "$ref": "#/definitions/output.image" }
+          { "$ref": "#/definitions/output.array"  },
+          { "$ref": "#/definitions/output.image"  },
+          { "$ref": "#/definitions/output.string" }
         ]
       }
     },

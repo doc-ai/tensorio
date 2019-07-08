@@ -42,7 +42,8 @@
           "items": { "type": "integer" }
         },
         "value": {
-          "type": "number"
+          "type": "array",
+          "items": { "type": "number"  }
         }
       }
     },

@@ -21,7 +21,6 @@
       "required": [
         "name",
         "type",
-        "dtype",
         "shape",
         "value"
       ],

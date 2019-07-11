@@ -318,6 +318,57 @@
       }
     },
 
+    "placeholder.array.quantize": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "standard": { "type": "string" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "scale":    { "type": "number" },
+            "bias":     { "type": "number" }
+          }
+        }
+      ]
+    },
+
+    "placeholder.array": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "shape"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["array"]
+        },
+        "dtype": {
+          "type": "string",
+          "enum": ["uint8", "float32", "int32", "int64"]
+        },
+        "shape": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "quantize": {
+          "$ref": "#/definitions/placeholder.array.quantize"
+        }
+      }
+    },
+
     "train": {
       "type": "object",
       "additionalProperties": false,
@@ -373,6 +424,14 @@
           { "$ref": "#/definitions/output.array"  },
           { "$ref": "#/definitions/output.image"  },
           { "$ref": "#/definitions/output.string" }
+        ]
+      }
+    },
+    "placholders": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "#/definitions/placeholder.array"  }
         ]
       }
     },

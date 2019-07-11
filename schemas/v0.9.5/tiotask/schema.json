@@ -15,13 +15,33 @@
       }
     },
 
+    "placeholder.array.quantize": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "standard": { "type": "string" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "scale":    { "type": "number" },
+            "bias":     { "type": "number" }
+          }
+        }
+      ]
+    },
+
     "placeholder.array": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "required": [
         "name",
         "type",
-        "dtype",
         "shape",
         "value"
       ],
@@ -41,8 +61,12 @@
           "type": "array",
           "items": { "type": "integer" }
         },
+        "quantize": {
+          "$ref": "#/definitions/placeholder.array.quantize"
+        },
         "value": {
-          "type": "number"
+          "type": "array",
+          "items": { "type": "number"  }
         }
       }
     },

@@ -18,14 +18,6 @@ Prediction with Tensor/IO can often be done with as little as five lines of code
 
 With support for the full TensorFlow backend you can train models on device and then export their updated weights, which can be immediately used in a prediction model. All without ever leaving the phone. Use the same declarative interface to specify your training inputs and outputs, evaluation metric, and training operation, and to inject placeholder values into your model for on-device hyperparameter tuning.
 
-#### Deployment
-
-Our packaging makes it easy to ship models with your application, but the plain text model interfaces and client-server code also allow you to retrieve and update models in deployed applications. No need to write new code or recompile the app. Our Tensor/IO-Models repo listed below includes the serverside application to support in-production deployments.
-
-#### Federated Learning
-
-Building on support for training and in-production deployment, we have also implemented a federated learning system. Clients check for federated training tasks at a central location and then download and train models locally. Local updates are returned to backend infrastructure and aggregated to create a new global model, which is sent back to local devices for prediction and evaluation. The federated approach helps us to fulfill one of our core missions: to preserve the privacy of data.
-
 ### Example Usage
 
 Given a TensorFlow Lite MobileNet ImageNet classification model that has been packaged into a Tensor/IO bundle ([bundled here](https://github.com/doc-ai/tensorio/tree/master/models/image-classification.tiobundle)), the model.json looks like:
@@ -174,16 +166,6 @@ Our React Native bindings for Tensor/IO, with full support for the iOS version. 
 [Tensor/IO Demo App for React Native](https://github.com/doc-ai/react-native-Tensor/IO-example)
 
 An example application demonstrating how to use the Tensor/IO module in a React Native application, with a MobileNet ImageNet classification model.
-
-#### Deployment and Federated Learning
-
-[Tensor/IO Models](https://github.com/doc-ai/tensorio-models)
-
-Our backend service for deploying models to device. Client APIs in Tensor/IO communicate with a Tensor/IO Models server to browse, retrieve, and update models.
-
-[Tensor/IO Flea](https://github.com/doc-ai/tensorio-models)
-
-Flea (Federated LEArning) is our backend service for conducting federated training rounds. Client APIs in Tensor/IO communicate with a Tensor/IO Flea server to retrieve federated learning tasks and return updated model weights for later aggregation into a new prediction model.
 
 #### Tools
 

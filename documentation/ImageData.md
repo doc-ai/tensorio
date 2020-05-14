@@ -236,5 +236,6 @@ NSDictionary *inference = (NSDictionary *)[model runOn:buffer];
 NSDictionary<NSString*,NSNumber*> *classification = inference[@"classification"];
 ```
 
+Find more examples of image models at [tensorio/examples](https://github.com/doc-ai/tensorio/tree/master/examples).
 
 << [Quantization](Quantization.md) || [TOC](TOC.md) || [Training](Training.md) >>

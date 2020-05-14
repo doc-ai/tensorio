@@ -297,5 +297,6 @@ signature_def['train']:
   Method name is: tensorflow/supervised/training
 ```
 
+Find more examples of models that have been exported for training and how to use them at [tensorio/examples](https://github.com/doc-ai/tensorio/tree/master/examples).
 
 << [Image Data](ImageData.md) || [TOC](TOC.md) || [Example Models](ExampleModels.md) >>

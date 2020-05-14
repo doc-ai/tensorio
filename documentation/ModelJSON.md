@@ -48,7 +48,7 @@ The *model.json* file has the following basic structure:
     "quantized": false,
     "type": "image.classification.imagenet",
     "backend": "tflite",
-    "modes": ["train"]
+    "modes": ["predict"]
   },
   "inputs": [
     {
@@ -80,7 +80,7 @@ The model field is a dictionary that itself contains two to five entries:
   "file": "model.tflite",
   "backend": "tflite",
   "quantized": false,
-  "modes": ["train"],
+  "modes": ["predict"],
   "type": "image.classification.imagenet",
   "class": "MyOptionalCustomClassName"
 }

@@ -139,9 +139,9 @@ All Tensor/IO, Net Runner, and related code is open source under an Apache 2 lic
 
 #### Example Models
 
-[Tensor/IO Examples](https://github.com/doc-ai/tensorio-examples)
+[Tensor/IO Examples](https://github.com/doc-ai/tensorio/tree/master/examples)
 
-A collection of jupyter notebooks showing how to build models that can be exported for inference and training on device with Tensor/IO. Also includes an iOS example application showing how to use each of those models on device.
+Part of this repository, a collection of jupyter notebooks showing how to build models that can be exported for inference and training on device with Tensor/IO. Also includes an iOS example application showing how to use each of those models on device.
 
 #### iOS
 

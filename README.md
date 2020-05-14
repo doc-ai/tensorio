@@ -165,11 +165,11 @@ Net Runner is our Android application environment for running computer vision mo
 
 #### React Native
 
-[Tensor/IO for React Native](https://github.com/doc-ai/react-native-Tensor/IO)
+[Tensor/IO for React Native](https://github.com/doc-ai/react-native-tensorio)
 
 Our React Native bindings for Tensor/IO, with full support for the iOS version. React Native bindings for Android are forthcoming.
 
-[Tensor/IO Demo App for React Native](https://github.com/doc-ai/react-native-Tensor/IO-example)
+[Tensor/IO Demo App for React Native](https://github.com/doc-ai/react-native-tensorio-example)
 
 An example application demonstrating how to use the Tensor/IO module in a React Native application, with a MobileNet ImageNet classification model.
 

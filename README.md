@@ -2,9 +2,9 @@
 
 Tensor/IO is a lightweight, cross-platform library for on-device machine learning, bringing the power of TensorFlow and TensorFlow Lite to iOS, Android, and React Native applications. Tensor/IO does not implement any machine learning itself but works with an underlying library such as TensorFlow to simplify the process of deploying and using models on mobile phones.
 
-#### Tensor/IO is Declarative
+#### Declarative
 
-Tensor/IO is above all a declarative interface to your model. This means that you describe the input and output layers to your model using a plain-text language and Tensor/IO takes care of the transformations needed to prepare inputs for the model and to read outputs back out of it, allowing you to focus on what you know instead of a low-level C++ interface.
+Tensor/IO is above all a declarative interface to your model. Describe the input and output layers to your model using a plain-text language and Tensor/IO takes care of the transformations needed to prepare inputs for the model and to read outputs back out of it, allowing you to focus on what you know instead of a low-level C++ interface.
 
 #### On-Device
 
@@ -12,23 +12,15 @@ Tensor/IO runs on iOS and Android mobile phones, with bridging for React Native,
 
 #### Inference
 
-Prediction with Tensor/IO can often be done with as little as five lines of code. The TensorFlow Lite backend supports deep networks and a range of convolutional models, and the full TensorFlow backend supports almost any network you can build in python. Performance is impressive. MobileNet models execute inference on the iPhone X in ~30ms and can be run in real-time.
+Prediction with Tensor/IO can often be done with as little as five lines of code. The TensorFlow Lite backend supports deep neural networks and a range of convolutional models, and the full TensorFlow backend supports almost any network you can build in python. Performance is impressive. MobileNet models execute inference on the iPhone X in ~30ms and can be run in real-time.
 
 #### Training
 
 With support for the full TensorFlow backend you can train models on device and then export their updated weights, which can be immediately used in a prediction model. All without ever leaving the phone. Use the same declarative interface to specify your training inputs and outputs, evaluation metric, and training operation, and to inject placeholder values into your model for on-device hyperparameter tuning.
 
-#### Deployment
-
-Our packaging makes it easy to ship models with your application, but the plain text model interfaces and client-server code also allow you to retrieve and update models in deployed applications. No need to write new code or recompile the app. Our Tensor/IO-Models repo listed below includes the serverside application to support in-production deployments.
-
-#### Federated Learning
-
-Building on support for training and in-production deployment, we have also implemented a federated learning system. Clients check for federated training tasks at a central location and then download and train models locally. Local updates are returned to backend infrastructure and aggregated to create a new global model, which is sent back to local devices for prediction and evaluation. The federated approach helps us to fulfill one of our core missions: to preserve the privacy of data.
-
 ### Example Usage
 
-Given a TensorFlow Lite MobileNet ImageNet classification model that has been packaged into a Tensor/IO bundle ([bundled here](https://github.com/doc-ai/tensorio/tree/master/models/image-classification.tiobundle)), the model.json looks like:
+Given a TensorFlow Lite MobileNet ImageNet classification model that has been packaged into a Tensor/IO bundle ([bundled here](https://github.com/doc-ai/tensorio/tree/master/models/image-classification.tiobundle)), the model's description looks like:
 
 ```json
 {
@@ -145,11 +137,17 @@ RNTensor/IO.run({
 
 All Tensor/IO, Net Runner, and related code is open source under an Apache 2 license. Copyright [doc.ai](https://doc.ai), 2018-present.
 
+#### Example Models
+
+[Tensor/IO Examples](https://github.com/doc-ai/tensorio/tree/master/examples)
+
+Part of this repository, a collection of jupyter notebooks showing how to build models that can be exported for inference and training on device with Tensor/IO. Also includes an iOS example application showing how to use each of those models on device.
+
 #### iOS
 
 [Tensor/IO for iOS](https://github.com/doc-ai/tensorio-ios)
 
-Our Objective-C++ implementation of Tensor/IO, with support for Swift. Requires iOS 9.3+ and has been tested on devices as old as a 5th generation iPod touch (2012).
+Our Objective-C++ implementation of Tensor/IO, with support for Swift. Requires iOS 9.3+ and has been tested on devices as old as a 5th generation iPod touch (2012). If you choose to use the TensorFlow backend, iOS 12.0+ is required.
 
 [Net Runner for iOS](https://github.com/doc-ai/net-runner-ios)
 
@@ -175,35 +173,25 @@ Our React Native bindings for Tensor/IO, with full support for the iOS version. 
 
 An example application demonstrating how to use the Tensor/IO module in a React Native application, with a MobileNet ImageNet classification model.
 
-#### Deployment and Federated Learning
-
-[Tensor/IO Models](https://github.com/doc-ai/tensorio-models)
-
-Our backend service for deploying models to device. Client APIs in Tensor/IO communicate with a Tensor/IO Models server to browse, retrieve, and update models.
-
-[Tensor/IO Flea](https://github.com/doc-ai/tensorio-models)
-
-Flea (Federated LEArning) is our backend service for conducting federated training rounds. Client APIs in Tensor/IO communicate with a Tensor/IO Flea server to retrieve federated learning tasks and return updated model weights for later aggregation into a new prediction model.
-
 #### Tools
 
-[Tensor/IO Bundler](https://github.com/doc-ai/tensorio-bundler)
+[Tensor/IO Python Package](https://github.com/doc-ai/tensorio-python-package)
 
-Our bundling utility for packaging models into the Tensor/IO format. Includes a Slack bot, Bundlebot, that helps convert checkpointed models to the Tensor/IO format and deploy them to device in under a minute.
+An expanding suite of python tools for working with Tensor/IO bundles, the format used to package models for running on device with Tensor/IO.
 
 #### Additional Repositories
 
 [TensorFlow @ doc.ai](https://github.com/doc-ai/tensorflow)
 
-Our TensorFlow fork with fixes and additional ops enabled to support both training and inference on iOS. See specifically the [v1.13.0-rc2-ios-fixes](https://github.com/doc-ai/tensorflow/tree/v1.13.0-rc2-ios-fixes) branch and our [build script](https://github.com/doc-ai/tensorflow/blob/v1.13.0-rc2-ios-fixes/tensorflow/contrib/makefile/create_full_ios_frameworks.sh) for composing the framework.
+Our TensorFlow fork with fixes and additional ops enabled to support both training and inference on iOS. See specifically the [v1.13.0-rc2-ios-fixes](https://github.com/doc-ai/tensorflow/tree/v1.13.0-rc2-ios-fixes) branch and our [build script](https://github.com/doc-ai/tensorflow/blob/v1.13.0-rc2-ios-fixes/tensorflow/contrib/makefile/create_full_ios_frameworks.sh) for composing the framework. Our build supports models built in TF 1.13-15 and some models built in TF 2. We are currently working on updating our on device build to v1.15.
 
 [Tensorflow.framework](https://github.com/doc-ai/tensorflow-ios-framework)
 
-Unofficial build of the full tensorflow.framework (not TFLite) for iOS that we will be using in the Tensor/IO/TensorFlow subspec.
+Unofficial build of the full tensorflow.framework (not TFLite) packaged for iOS that we use with the TensorFlow backend.
 
-[TensorFlow Cocoapod](https://github.com/doc-ai/tensorio-tensorflow-ios)
+[TensorFlow CocoaPod](https://github.com/doc-ai/tensorio-tensorflow-ios)
 
-Unofficial full build of TensorFlow in a self-contained CocoaPod that we will be using in the Tensor/IO/TensorFlow subspec. Vends the tensorflow, protobuf, and nysnc static libraries and all headers.
+Unofficial build of TensorFlow in a self-contained CocoaPod that we use with the Tensor/IO's TensorFlow backend. Vends the tensorflow, protobuf, and nysnc static libraries and all headers required to perform inference and training on device.
 
 ### Core Contributors
 

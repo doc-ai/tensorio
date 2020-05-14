@@ -1,0 +1,29 @@
+{
+	"name": "Keras MNIST Fashion Save Model Example",
+	"details": "Basic Keras Model for Fashion MNSIT dataset exported for prediction using the keras model.save api",
+	"id": "keras-mnist-clothing-save-model",
+	"version": "1",
+	"author": "doc.ai",
+	"license": "Apache License. Version 2.0 http://www.apache.org/licenses/LICENSE-2.0",
+	"model": {
+		"file": "predict",
+		"quantized": false,
+		"type": "mnist.fashion.keras",
+		"backend": "tensorflow",
+		"modes": ["predict"]
+	},
+	"inputs": [
+		{
+			"name": "serving_default_flatten_input",
+			"type": "array",
+			"shape": [-1,28,28]
+		}
+	],
+	"outputs": [
+		{
+			"name": "StatefulPartitionedCall",
+			"type": "array",
+			"shape": [-1,10]
+		}
+	]
+}

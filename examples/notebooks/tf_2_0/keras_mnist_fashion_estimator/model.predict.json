@@ -1,0 +1,29 @@
+{
+	"name": "Keras MNIST Fashion Estimator Preduct Test",
+	"details": "Basic Keras Model for Fashion MNSIT dataset exported using the estimator apis",
+	"id": "keras-mnist-fashion-estimator-predict",
+	"version": "1",
+	"author": "doc.ai",
+	"license": "Apache License. Version 2.0 http://www.apache.org/licenses/LICENSE-2.0",
+	"model": {
+		"file": "predict",
+		"quantized": false,
+		"type": "mnist.fashion.basic",
+		"backend": "tensorflow",
+		"modes": ["predict"]
+	},
+	"inputs": [
+		{
+			"name": "image",
+			"type": "array",
+			"shape": [-1,28,28]
+		}
+	],
+	"outputs": [
+		{
+			"name": "sequential/dense_1/BiasAdd",
+			"type": "array",
+			"shape": [-1,10]
+		}
+	]
+}

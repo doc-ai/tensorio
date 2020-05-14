@@ -1,0 +1,40 @@
+{
+	"name": "Keras MNIST Fashion Estimator Train Example",
+	"details": "Basic Keras Model for Fashion MNSIT dataset exported using the estimator apis and an experimental mode for training",
+	"id": "keras-mnist-fashion-estimator-train",
+	"version": "1",
+	"author": "doc.ai",
+	"license": "Apache License. Version 2.0 http://www.apache.org/licenses/LICENSE-2.0",
+	"model": {
+		"file": "train",
+		"quantized": false,
+		"type": "mnist.fashion.basic",
+		"backend": "tensorflow",
+		"modes": ["train"]
+	},
+	"inputs": [
+		{
+			"name": "image",
+			"type": "array",
+			"shape": [-1,28,28]
+		},
+		{
+			"name": "label",
+			"type": "array",
+			"dtype": "int32",
+			"shape": [-1,1]
+		}
+	],
+	"outputs": [
+		{
+			"name": "sparse_categorical_crossentropy/weighted_loss/value",
+			"type": "array",
+			"shape": [1]
+		}
+	],
+	"train": {
+		"ops": [
+			"train"
+		]
+	}
+}

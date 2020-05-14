@@ -1,0 +1,28 @@
+PODS:
+  - DSJSONSchemaValidation (2.0.7)
+  - TensorIO/Core (0.9.7):
+    - DSJSONSchemaValidation
+  - TensorIO/TensorFlow (0.9.7):
+    - DSJSONSchemaValidation
+    - TensorIO/Core
+    - TensorIOTensorFlow
+  - TensorIOTensorFlow (1.13.5)
+
+DEPENDENCIES:
+  - TensorIO/Core
+  - TensorIO/TensorFlow
+
+SPEC REPOS:
+  trunk:
+    - DSJSONSchemaValidation
+    - TensorIO
+    - TensorIOTensorFlow
+
+SPEC CHECKSUMS:
+  DSJSONSchemaValidation: 46e30ccfa9908c49d184f453d556f55aa0aac1ff
+  TensorIO: 428a8b90ee4a14622a6be6eced43e1eb04b6cdf7
+  TensorIOTensorFlow: 66391fb72910e7814aec5c0ab1d4789a81ac3399
+
+PODFILE CHECKSUM: 93046af6d343e8b1821e8fa45a930761032d7ce5
+
+COCOAPODS: 1.9.0

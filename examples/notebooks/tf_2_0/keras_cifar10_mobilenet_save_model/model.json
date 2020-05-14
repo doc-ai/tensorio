@@ -1,0 +1,33 @@
+{
+	"name": "Keras CIFAR-10 MobileNet Save Model Example",
+	"details": "Keras MobileNetV2 Model for CIFAR-10 dataset exported for prediction using the keras model.save api",
+	"id": "keras-cifar10-mobilenet-save-model",
+	"version": "1",
+	"author": "doc.ai",
+	"license": "Apache License. Version 2.0 http://www.apache.org/licenses/LICENSE-2.0",
+	"model": {
+		"file": "predict",
+		"quantized": false,
+		"type": "cifar10.basic",
+		"backend": "tensorflow",
+		"modes": ["predict"]
+	},
+	"inputs": [
+		{
+			"name": "serving_default_keras_layer_input",
+			"type": "image",
+			"shape": [-1,96,96,3],
+			"format": "RGB",
+			"normalize": {
+				"standard": "[0,1]"
+			}
+		}
+	],
+	"outputs": [
+		{
+			"name": "StatefulPartitionedCall",
+			"type": "array",
+			"shape": [-1,10]
+		}
+	]
+}

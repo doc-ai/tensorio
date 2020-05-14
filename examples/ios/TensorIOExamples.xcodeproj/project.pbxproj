@@ -1,0 +1,656 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22E4551D3A91DF03E66D68FE /* Pods_TensorIOExamples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81247C84723912D4DE81639 /* Pods_TensorIOExamples.framework */; };
+		E32B3B5C2469BFAF00E16B14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B3B5B2469BFAF00E16B14 /* AppDelegate.swift */; };
+		E32B3B5E2469BFAF00E16B14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B3B5D2469BFAF00E16B14 /* SceneDelegate.swift */; };
+		E32B3B602469BFAF00E16B14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B3B5F2469BFAF00E16B14 /* ViewController.swift */; };
+		E32B3B632469BFAF00E16B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E32B3B612469BFAF00E16B14 /* Main.storyboard */; };
+		E32B3B652469BFB100E16B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E32B3B642469BFB100E16B14 /* Assets.xcassets */; };
+		E32B3B682469BFB100E16B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E32B3B662469BFB100E16B14 /* LaunchScreen.storyboard */; };
+		E32B3B732469BFB100E16B14 /* TensorIOExamplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B3B722469BFB100E16B14 /* TensorIOExamplesTests.swift */; };
+		E32B3B7E2469DE7A00E16B14 /* models in Resources */ = {isa = PBXBuildFile; fileRef = E32B3B7D2469DE7A00E16B14 /* models */; };
+		E32B3B802469DEDB00E16B14 /* TF_2_0_KerasMNISTFashionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B3B7F2469DEDB00E16B14 /* TF_2_0_KerasMNISTFashionTests.swift */; };
+		E32B3B822469DEF800E16B14 /* TF_2_0_KerasCIFAR10MobileNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B3B812469DEF800E16B14 /* TF_2_0_KerasCIFAR10MobileNetTests.swift */; };
+		E32B3B842469E1EB00E16B14 /* cifar-car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E32B3B832469E1EB00E16B14 /* cifar-car.jpg */; };
+		E32B3B852469E1EB00E16B14 /* cifar-car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E32B3B832469E1EB00E16B14 /* cifar-car.jpg */; };
+		F67E1199AC2E7E0025BCFAE2 /* Pods_TensorIOExamples_TensorIOExamplesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1165F9DBDAE988FD9345147 /* Pods_TensorIOExamples_TensorIOExamplesTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E32B3B6F2469BFB100E16B14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E32B3B502469BFAF00E16B14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E32B3B572469BFAF00E16B14;
+			remoteInfo = TensorIOExamples;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14B292FBA2FD7455845F5DC2 /* Pods-TensorIOExamples-TensorIOExamplesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TensorIOExamples-TensorIOExamplesTests.debug.xcconfig"; path = "Target Support Files/Pods-TensorIOExamples-TensorIOExamplesTests/Pods-TensorIOExamples-TensorIOExamplesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7DAC0B58FC8E7369E0F3A823 /* Pods-TensorIOExamplesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TensorIOExamplesTests.debug.xcconfig"; path = "Target Support Files/Pods-TensorIOExamplesTests/Pods-TensorIOExamplesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9793BFFF964349178AC701E9 /* Pods-TensorIOExamples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TensorIOExamples.debug.xcconfig"; path = "Target Support Files/Pods-TensorIOExamples/Pods-TensorIOExamples.debug.xcconfig"; sourceTree = "<group>"; };
+		9A4E014A3383F71AD3A4D3D2 /* Pods-TensorIOExamplesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TensorIOExamplesTests.release.xcconfig"; path = "Target Support Files/Pods-TensorIOExamplesTests/Pods-TensorIOExamplesTests.release.xcconfig"; sourceTree = "<group>"; };
+		B1165F9DBDAE988FD9345147 /* Pods_TensorIOExamples_TensorIOExamplesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TensorIOExamples_TensorIOExamplesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B40A18360BE541DA6E428BF5 /* Pods-TensorIOExamples-TensorIOExamplesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TensorIOExamples-TensorIOExamplesTests.release.xcconfig"; path = "Target Support Files/Pods-TensorIOExamples-TensorIOExamplesTests/Pods-TensorIOExamples-TensorIOExamplesTests.release.xcconfig"; sourceTree = "<group>"; };
+		D730C82CE447D61C97434711 /* Pods-TensorIOExamples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TensorIOExamples.release.xcconfig"; path = "Target Support Files/Pods-TensorIOExamples/Pods-TensorIOExamples.release.xcconfig"; sourceTree = "<group>"; };
+		D81247C84723912D4DE81639 /* Pods_TensorIOExamples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TensorIOExamples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E32B3B582469BFAF00E16B14 /* TensorIOExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TensorIOExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E32B3B5B2469BFAF00E16B14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E32B3B5D2469BFAF00E16B14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E32B3B5F2469BFAF00E16B14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E32B3B622469BFAF00E16B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E32B3B642469BFB100E16B14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E32B3B672469BFB100E16B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E32B3B692469BFB100E16B14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E32B3B6E2469BFB100E16B14 /* TensorIOExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensorIOExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E32B3B722469BFB100E16B14 /* TensorIOExamplesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorIOExamplesTests.swift; sourceTree = "<group>"; };
+		E32B3B742469BFB100E16B14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E32B3B7D2469DE7A00E16B14 /* models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = models; sourceTree = "<group>"; };
+		E32B3B7F2469DEDB00E16B14 /* TF_2_0_KerasMNISTFashionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TF_2_0_KerasMNISTFashionTests.swift; sourceTree = "<group>"; };
+		E32B3B812469DEF800E16B14 /* TF_2_0_KerasCIFAR10MobileNetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TF_2_0_KerasCIFAR10MobileNetTests.swift; sourceTree = "<group>"; };
+		E32B3B832469E1EB00E16B14 /* cifar-car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cifar-car.jpg"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E32B3B552469BFAF00E16B14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22E4551D3A91DF03E66D68FE /* Pods_TensorIOExamples.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E32B3B6B2469BFB100E16B14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F67E1199AC2E7E0025BCFAE2 /* Pods_TensorIOExamples_TensorIOExamplesTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BFCDEBBF246CED2D6237B2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D81247C84723912D4DE81639 /* Pods_TensorIOExamples.framework */,
+				B1165F9DBDAE988FD9345147 /* Pods_TensorIOExamples_TensorIOExamplesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFB338D8FDB53C0E6E4D46E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9793BFFF964349178AC701E9 /* Pods-TensorIOExamples.debug.xcconfig */,
+				D730C82CE447D61C97434711 /* Pods-TensorIOExamples.release.xcconfig */,
+				7DAC0B58FC8E7369E0F3A823 /* Pods-TensorIOExamplesTests.debug.xcconfig */,
+				9A4E014A3383F71AD3A4D3D2 /* Pods-TensorIOExamplesTests.release.xcconfig */,
+				14B292FBA2FD7455845F5DC2 /* Pods-TensorIOExamples-TensorIOExamplesTests.debug.xcconfig */,
+				B40A18360BE541DA6E428BF5 /* Pods-TensorIOExamples-TensorIOExamplesTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E32B3B4F2469BFAF00E16B14 = {
+			isa = PBXGroup;
+			children = (
+				E32B3B7D2469DE7A00E16B14 /* models */,
+				E32B3B872469E23700E16B14 /* TestImages */,
+				E32B3B5A2469BFAF00E16B14 /* TensorIOExamples */,
+				E32B3B712469BFB100E16B14 /* TensorIOExamplesTests */,
+				E32B3B592469BFAF00E16B14 /* Products */,
+				CFB338D8FDB53C0E6E4D46E2 /* Pods */,
+				2BFCDEBBF246CED2D6237B2F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E32B3B592469BFAF00E16B14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E32B3B582469BFAF00E16B14 /* TensorIOExamples.app */,
+				E32B3B6E2469BFB100E16B14 /* TensorIOExamplesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E32B3B5A2469BFAF00E16B14 /* TensorIOExamples */ = {
+			isa = PBXGroup;
+			children = (
+				E32B3B5B2469BFAF00E16B14 /* AppDelegate.swift */,
+				E32B3B5D2469BFAF00E16B14 /* SceneDelegate.swift */,
+				E32B3B5F2469BFAF00E16B14 /* ViewController.swift */,
+				E32B3B612469BFAF00E16B14 /* Main.storyboard */,
+				E32B3B642469BFB100E16B14 /* Assets.xcassets */,
+				E32B3B662469BFB100E16B14 /* LaunchScreen.storyboard */,
+				E32B3B692469BFB100E16B14 /* Info.plist */,
+			);
+			path = TensorIOExamples;
+			sourceTree = "<group>";
+		};
+		E32B3B712469BFB100E16B14 /* TensorIOExamplesTests */ = {
+			isa = PBXGroup;
+			children = (
+				E32B3B722469BFB100E16B14 /* TensorIOExamplesTests.swift */,
+				E32B3B7F2469DEDB00E16B14 /* TF_2_0_KerasMNISTFashionTests.swift */,
+				E32B3B812469DEF800E16B14 /* TF_2_0_KerasCIFAR10MobileNetTests.swift */,
+				E32B3B742469BFB100E16B14 /* Info.plist */,
+			);
+			path = TensorIOExamplesTests;
+			sourceTree = "<group>";
+		};
+		E32B3B872469E23700E16B14 /* TestImages */ = {
+			isa = PBXGroup;
+			children = (
+				E32B3B832469E1EB00E16B14 /* cifar-car.jpg */,
+			);
+			name = TestImages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E32B3B572469BFAF00E16B14 /* TensorIOExamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E32B3B772469BFB100E16B14 /* Build configuration list for PBXNativeTarget "TensorIOExamples" */;
+			buildPhases = (
+				01A3611BB9D9E71769CA180F /* [CP] Check Pods Manifest.lock */,
+				E32B3B542469BFAF00E16B14 /* Sources */,
+				E32B3B552469BFAF00E16B14 /* Frameworks */,
+				E32B3B562469BFAF00E16B14 /* Resources */,
+				09B3F9DE05506C7C19976B80 /* [CP] Embed Pods Frameworks */,
+				A5F69C105AE195B86EFF17B1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TensorIOExamples;
+			productName = TensorIOExamples;
+			productReference = E32B3B582469BFAF00E16B14 /* TensorIOExamples.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E32B3B6D2469BFB100E16B14 /* TensorIOExamplesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E32B3B7A2469BFB100E16B14 /* Build configuration list for PBXNativeTarget "TensorIOExamplesTests" */;
+			buildPhases = (
+				9D9B5A2628A4AA10EB5A0DB5 /* [CP] Check Pods Manifest.lock */,
+				E32B3B6A2469BFB100E16B14 /* Sources */,
+				E32B3B6B2469BFB100E16B14 /* Frameworks */,
+				E32B3B6C2469BFB100E16B14 /* Resources */,
+				9622AC42B75DE24BBFDDAB65 /* [CP] Embed Pods Frameworks */,
+				0C7890D9130FDBFEC376CD28 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E32B3B702469BFB100E16B14 /* PBXTargetDependency */,
+			);
+			name = TensorIOExamplesTests;
+			productName = TensorIOExamplesTests;
+			productReference = E32B3B6E2469BFB100E16B14 /* TensorIOExamplesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E32B3B502469BFAF00E16B14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = doc.ai;
+				TargetAttributes = {
+					E32B3B572469BFAF00E16B14 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					E32B3B6D2469BFB100E16B14 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = E32B3B532469BFAF00E16B14 /* Build configuration list for PBXProject "TensorIOExamples" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E32B3B4F2469BFAF00E16B14;
+			productRefGroup = E32B3B592469BFAF00E16B14 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E32B3B572469BFAF00E16B14 /* TensorIOExamples */,
+				E32B3B6D2469BFB100E16B14 /* TensorIOExamplesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E32B3B562469BFAF00E16B14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E32B3B842469E1EB00E16B14 /* cifar-car.jpg in Resources */,
+				E32B3B682469BFB100E16B14 /* LaunchScreen.storyboard in Resources */,
+				E32B3B652469BFB100E16B14 /* Assets.xcassets in Resources */,
+				E32B3B632469BFAF00E16B14 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E32B3B6C2469BFB100E16B14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E32B3B852469E1EB00E16B14 /* cifar-car.jpg in Resources */,
+				E32B3B7E2469DE7A00E16B14 /* models in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01A3611BB9D9E71769CA180F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TensorIOExamples-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		09B3F9DE05506C7C19976B80 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TensorIOExamples/Pods-TensorIOExamples-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TensorIOExamples/Pods-TensorIOExamples-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TensorIOExamples/Pods-TensorIOExamples-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0C7890D9130FDBFEC376CD28 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TensorIOExamples-TensorIOExamplesTests/Pods-TensorIOExamples-TensorIOExamplesTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TensorIOExamples-TensorIOExamplesTests/Pods-TensorIOExamples-TensorIOExamplesTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TensorIOExamples-TensorIOExamplesTests/Pods-TensorIOExamples-TensorIOExamplesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9622AC42B75DE24BBFDDAB65 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TensorIOExamples-TensorIOExamplesTests/Pods-TensorIOExamples-TensorIOExamplesTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TensorIOExamples-TensorIOExamplesTests/Pods-TensorIOExamples-TensorIOExamplesTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TensorIOExamples-TensorIOExamplesTests/Pods-TensorIOExamples-TensorIOExamplesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D9B5A2628A4AA10EB5A0DB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TensorIOExamples-TensorIOExamplesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5F69C105AE195B86EFF17B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TensorIOExamples/Pods-TensorIOExamples-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TensorIOExamples/Pods-TensorIOExamples-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TensorIOExamples/Pods-TensorIOExamples-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E32B3B542469BFAF00E16B14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E32B3B602469BFAF00E16B14 /* ViewController.swift in Sources */,
+				E32B3B5C2469BFAF00E16B14 /* AppDelegate.swift in Sources */,
+				E32B3B5E2469BFAF00E16B14 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E32B3B6A2469BFB100E16B14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E32B3B732469BFB100E16B14 /* TensorIOExamplesTests.swift in Sources */,
+				E32B3B802469DEDB00E16B14 /* TF_2_0_KerasMNISTFashionTests.swift in Sources */,
+				E32B3B822469DEF800E16B14 /* TF_2_0_KerasCIFAR10MobileNetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E32B3B702469BFB100E16B14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E32B3B572469BFAF00E16B14 /* TensorIOExamples */;
+			targetProxy = E32B3B6F2469BFB100E16B14 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E32B3B612469BFAF00E16B14 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E32B3B622469BFAF00E16B14 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E32B3B662469BFB100E16B14 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E32B3B672469BFB100E16B14 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E32B3B752469BFB100E16B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E32B3B762469BFB100E16B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E32B3B782469BFB100E16B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9793BFFF964349178AC701E9 /* Pods-TensorIOExamples.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5SNYPF7SQ;
+				INFOPLIST_FILE = TensorIOExamples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.doc.TensorIOExamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E32B3B792469BFB100E16B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D730C82CE447D61C97434711 /* Pods-TensorIOExamples.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5SNYPF7SQ;
+				INFOPLIST_FILE = TensorIOExamples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.doc.TensorIOExamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E32B3B7B2469BFB100E16B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14B292FBA2FD7455845F5DC2 /* Pods-TensorIOExamples-TensorIOExamplesTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5SNYPF7SQ;
+				INFOPLIST_FILE = TensorIOExamplesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.doc.TensorIOExamplesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E32B3B7C2469BFB100E16B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B40A18360BE541DA6E428BF5 /* Pods-TensorIOExamples-TensorIOExamplesTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5SNYPF7SQ;
+				INFOPLIST_FILE = TensorIOExamplesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.doc.TensorIOExamplesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E32B3B532469BFAF00E16B14 /* Build configuration list for PBXProject "TensorIOExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E32B3B752469BFB100E16B14 /* Debug */,
+				E32B3B762469BFB100E16B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E32B3B772469BFB100E16B14 /* Build configuration list for PBXNativeTarget "TensorIOExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E32B3B782469BFB100E16B14 /* Debug */,
+				E32B3B792469BFB100E16B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E32B3B7A2469BFB100E16B14 /* Build configuration list for PBXNativeTarget "TensorIOExamplesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E32B3B7B2469BFB100E16B14 /* Debug */,
+				E32B3B7C2469BFB100E16B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E32B3B502469BFAF00E16B14 /* Project object */;
+}

@@ -32,7 +32,7 @@ The *assets* directory is optional and contains any additional assets required b
 
 Because image classification is such a common task, Tensor/IO includes built-in support for it, and no additional code is required. You'll simply need to specify a labels file in the model's JSON description, which we'll look at in a moment.
 
-**Using Model Bundles**
+### Using Model Bundles
 
 Tensor/IO encapsulate information about a model in `TIOModelBundle` . This class parses the metadata for a model from the *model.json* file and manage access to files in the *assets* directory.
 
@@ -56,5 +56,16 @@ NSString *path = @"...";
 TIOTFLiteModel *model = [TIOTFLiteModel modelWithBundleAtPath:path];
 ```
 
+### Packaging Model Bundles
+
+#### TF Lite
+
+For more information about packaging TF Lite models into model bundles, see additional instructions for [TF Lite Model Packaging](https://github.com/doc-ai/tensorio-ios/wiki/TensorFlow-Lite-Backend).
+
+#### TensorFlow
+
+For more information about packaging TensorFlow models into model bundles, see additional instructions for [TensorFlow Model Packaging](https://github.com/doc-ai/tensorio-ios/wiki/TensorFlow-Backend).
+
+And as always you can refer to our [example models](https://github.com/doc-ai/tensorio/tree/master/examples).
 
 << [Basic Usage](BasicUsage.md) || [TOC](TOC.md) || [Model JSON](ModelJSON.md) >>

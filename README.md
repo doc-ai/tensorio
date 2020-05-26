@@ -183,7 +183,7 @@ An expanding suite of python tools for working with Tensor/IO bundles, the forma
 
 [TensorFlow @ doc.ai](https://github.com/doc-ai/tensorflow)
 
-Our TensorFlow fork with fixes and additional ops enabled to support both training and inference on iOS. See specifically the [v1.13.0-rc2-ios-fixes](https://github.com/doc-ai/tensorflow/tree/v1.13.0-rc2-ios-fixes) branch and our [build script](https://github.com/doc-ai/tensorflow/blob/v1.13.0-rc2-ios-fixes/tensorflow/contrib/makefile/create_full_ios_frameworks.sh) for composing the framework. Our build supports models built in TF 1.13-15 and some models built in TF 2. We are currently working on updating our on device build to v1.15.
+Our TensorFlow fork with fixes and additional ops enabled to support both training and inference on iOS. See specifically the [r1.13.doc.ai](https://github.com/doc-ai/tensorflow/tree/r1.13.doc.ai) branch and our [build script](https://github.com/doc-ai/tensorflow/blob/r1.13.doc.ai/tensorflow/contrib/makefile/create_full_ios_frameworks.sh) for composing the framework. Our build supports models built in TF 1.13-15 and some models built in TF 2. We are currently working on updating our on device build to v1.15.
 
 [Tensorflow.framework](https://github.com/doc-ai/tensorflow-ios-framework)
 

@@ -31,7 +31,7 @@
 	],
 	"outputs": [
 		{
-			"name": "sparse_categorical_crossentropy/weighted_loss/value",
+			"name": "total_loss",
 			"type": "array",
 			"shape": [1]
 		}

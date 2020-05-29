@@ -139,7 +139,7 @@ class TF_2_0_KerasCIFAR10MobileNetTests: XCTestCase {
             XCTAssertNotNil(output)
             XCTAssertNil(error)
             
-            let loss = (output as! NSDictionary)["sparse_categorical_crossentropy/weighted_loss/value"] as? Float
+            let loss = (output as! NSDictionary)["total_loss"] as? Float
             
             XCTAssertNotNil(loss)
         }

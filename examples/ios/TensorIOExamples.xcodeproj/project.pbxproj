@@ -20,6 +20,8 @@
 		E32B3B822469DEF800E16B14 /* TF_2_0_KerasCIFAR10MobileNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B3B812469DEF800E16B14 /* TF_2_0_KerasCIFAR10MobileNetTests.swift */; };
 		E32B3B842469E1EB00E16B14 /* cifar-car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E32B3B832469E1EB00E16B14 /* cifar-car.jpg */; };
 		E32B3B852469E1EB00E16B14 /* cifar-car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E32B3B832469E1EB00E16B14 /* cifar-car.jpg */; };
+		E3499775248604BF00BCC519 /* TF_2_2_KerasMNISTFashionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3499774248604BF00BCC519 /* TF_2_2_KerasMNISTFashionTests.swift */; };
+		E3499777248604F000BCC519 /* TF_2_2_KerasCIFAR10MobileNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3499776248604F000BCC519 /* TF_2_2_KerasCIFAR10MobileNetTests.swift */; };
 		F67E1199AC2E7E0025BCFAE2 /* Pods_TensorIOExamples_TensorIOExamplesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1165F9DBDAE988FD9345147 /* Pods_TensorIOExamples_TensorIOExamplesTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		E32B3B7F2469DEDB00E16B14 /* TF_2_0_KerasMNISTFashionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TF_2_0_KerasMNISTFashionTests.swift; sourceTree = "<group>"; };
 		E32B3B812469DEF800E16B14 /* TF_2_0_KerasCIFAR10MobileNetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TF_2_0_KerasCIFAR10MobileNetTests.swift; sourceTree = "<group>"; };
 		E32B3B832469E1EB00E16B14 /* cifar-car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cifar-car.jpg"; sourceTree = "<group>"; };
+		E3499774248604BF00BCC519 /* TF_2_2_KerasMNISTFashionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TF_2_2_KerasMNISTFashionTests.swift; sourceTree = "<group>"; };
+		E3499776248604F000BCC519 /* TF_2_2_KerasCIFAR10MobileNetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TF_2_2_KerasCIFAR10MobileNetTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 				E32B3B722469BFB100E16B14 /* TensorIOExamplesTests.swift */,
 				E32B3B7F2469DEDB00E16B14 /* TF_2_0_KerasMNISTFashionTests.swift */,
 				E32B3B812469DEF800E16B14 /* TF_2_0_KerasCIFAR10MobileNetTests.swift */,
+				E3499774248604BF00BCC519 /* TF_2_2_KerasMNISTFashionTests.swift */,
+				E3499776248604F000BCC519 /* TF_2_2_KerasCIFAR10MobileNetTests.swift */,
 				E32B3B742469BFB100E16B14 /* Info.plist */,
 			);
 			path = TensorIOExamplesTests;
@@ -390,7 +396,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3499777248604F000BCC519 /* TF_2_2_KerasCIFAR10MobileNetTests.swift in Sources */,
 				E32B3B732469BFB100E16B14 /* TensorIOExamplesTests.swift in Sources */,
+				E3499775248604BF00BCC519 /* TF_2_2_KerasMNISTFashionTests.swift in Sources */,
 				E32B3B802469DEDB00E16B14 /* TF_2_0_KerasMNISTFashionTests.swift in Sources */,
 				E32B3B822469DEF800E16B14 /* TF_2_0_KerasCIFAR10MobileNetTests.swift in Sources */,
 			);

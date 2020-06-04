@@ -3,8 +3,8 @@ use_frameworks!
 
 target 'TensorIOExamples' do
 
-  pod 'TensorIO/Core', '~> 1.1.0'
-  pod 'TensorIO/TensorFlow', '~> 1.1.0'
+  pod 'TensorIO/Core', '~> 1.2.0'
+  pod 'TensorIO/TensorFlow', '~> 1.2.0'
 
   target 'TensorIOExamplesTests' do
     # inherit! :search_paths

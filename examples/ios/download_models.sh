@@ -4,7 +4,7 @@
 ## Downloads models from our public tensorio-examples bucket
 ## 
 
-MODELS_URL=https://storage.googleapis.com/tensorio-examples/r1.15/models.tar.gz
+MODELS_URL=https://storage.googleapis.com/tensorio-examples/r2.0/models.tar.gz
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WORK_DIR=`mktemp -d`

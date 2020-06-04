@@ -6,34 +6,23 @@ PODS:
     - DSJSONSchemaValidation
     - TensorIO/Core
     - TensorIOTensorFlow (~> 2.0)
-  - TensorIOTensorFlow (2.0)
+  - TensorIOTensorFlow (2.0.1)
 
 DEPENDENCIES:
-  - TensorIO/Core (from `https://github.com/doc-ai/tensorio-ios.git`, branch `r1.2`)
-  - TensorIO/TensorFlow (from `https://github.com/doc-ai/tensorio-ios.git`, branch `r1.2`)
-  - TensorIOTensorFlow (from `https://raw.githubusercontent.com/doc-ai/tensorio-tensorflow-ios/r2.0/TensorIOTensorFlow.podspec`)
+  - TensorIO/Core (~> 1.2.0)
+  - TensorIO/TensorFlow (~> 1.2.0)
 
 SPEC REPOS:
   trunk:
     - DSJSONSchemaValidation
-
-EXTERNAL SOURCES:
-  TensorIO:
-    :branch: r1.2
-    :git: https://github.com/doc-ai/tensorio-ios.git
-  TensorIOTensorFlow:
-    :podspec: https://raw.githubusercontent.com/doc-ai/tensorio-tensorflow-ios/r2.0/TensorIOTensorFlow.podspec
-
-CHECKOUT OPTIONS:
-  TensorIO:
-    :commit: 3553d8f4210b55779667df28ec9b120dfc06b587
-    :git: https://github.com/doc-ai/tensorio-ios.git
+    - TensorIO
+    - TensorIOTensorFlow
 
 SPEC CHECKSUMS:
   DSJSONSchemaValidation: 46e30ccfa9908c49d184f453d556f55aa0aac1ff
   TensorIO: 31d0be649947be21124930a7ae66ab86d39a182a
-  TensorIOTensorFlow: 905b6b9f82b2c5cc2161d9f5e5b80bb0e698d310
+  TensorIOTensorFlow: 471d71e67c03f03e40a5a8e384ef9031adc12e03
 
-PODFILE CHECKSUM: d22b4cc6afec3e7712414b509427633c3d2ca63b
+PODFILE CHECKSUM: 1f396b7bcbf01871c10c85ab13e25e6c9b14cd75
 
 COCOAPODS: 1.9.2

@@ -7,3 +7,7 @@ Example code demonstrating how to build models for use with tensor/io. Code is v
 ### iOS
 
 Example iOS code showing how to use each of the models built by the notebooks. Example code is contained in tests and not in the application itself.
+
+### Android
+
+Example Android code showing how to use each of the models built by the notebooks. Example code is contained in tests and not in the application itself.

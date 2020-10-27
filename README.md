@@ -157,7 +157,7 @@ Net Runner is our iOS application environment for running and evaluating compute
 
 [Tensor/IO for Android](https://github.com/doc-ai/tensorio-android)
 
-Our Java implementation of Tensor/IO for Android. Requires Java 8.
+Our Java implementation of Tensor/IO for Android. Requires Java 8. Kotlin compatible.
 
 [Net Runner for Android](https://github.com/doc-ai/net-runner-android)
 
@@ -183,15 +183,21 @@ An expanding suite of python tools for working with Tensor/IO bundles, the forma
 
 [TensorFlow @ doc.ai](https://github.com/doc-ai/tensorflow)
 
-Our TensorFlow fork with fixes and additional ops enabled to support both training and inference on iOS. See specifically the [r2.0.doc.ai](https://github.com/doc-ai/tensorflow/tree/r2.0.doc.ai) branch and our [build script](https://github.com/doc-ai/tensorflow/blob/r2.0.doc.ai/tensorflow/contrib/makefile/create_full_ios_frameworks.sh) for composing the framework. Our on-device build of TensorFlow 2.0 supports models built in TF v1.13 - v2.2.
+Our TensorFlow fork with fixes and additional ops enabled to support both training and inference on iOS and Android. See specifically the [r2.0.doc.ai](https://github.com/doc-ai/tensorflow/tree/r2.0.doc.ai) branch and our [build script](https://github.com/doc-ai/tensorflow/blob/r2.0.doc.ai/tensorflow/contrib/makefile/create_full_ios_frameworks.sh) for composing the framework. See the [r2.0.doc.ai-android](https://github.com/doc-ai/tensorflow/tree/r2.0.doc.ai-android) branch and our [comprehensive readme](https://github.com/doc-ai/tensorflow/blob/r2.0.doc.ai-android/tensorflow/contrib/makefile/README_ANDROID_DOCAI.md) for instructions on building tensorflow for Android.
+
+Our on-device build of TensorFlow 2.0 supports models built in TF v1.13 - v2.2 and may work with some models built in later versions of TensorFlow.
 
 [Tensorflow.framework](https://github.com/doc-ai/tensorflow-ios-framework)
 
-Unofficial build of the full tensorflow.framework (not TFLite) packaged for iOS that we use with the TensorFlow backend.
+Unofficial build of the full tensorflow.framework (not TF Lite) packaged for iOS that we use with the TensorFlow backend.
 
 [TensorFlow CocoaPod](https://github.com/doc-ai/tensorio-tensorflow-ios)
 
 Unofficial build of TensorFlow in a self-contained CocoaPod that we use with the Tensor/IO's TensorFlow backend. Vends the tensorflow, protobuf, and nysnc static libraries and all headers required to perform inference and training on device.
+
+[TensorFlow Android JNI](https://github.com/doc-ai/tensorio-tensorflow-android)
+
+Unofficial build of the full libtensorflow-core.a (not TF Lite) and required dependencies for Android, wrapped by the JNI, and packaged as a distributable Android library. Full support for inference and training on device.
 
 ### Core Contributors
 

@@ -41,8 +41,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
 
-    implementation 'com.github.doc-ai.tensorio-android:core:dev-SNAPSHOT'
-    implementation 'com.github.doc-ai.tensorio-android:tensorflow:dev-SNAPSHOT'
+    implementation 'com.github.doc-ai.tensorio-android:core:0.9.12'
+    implementation 'com.github.doc-ai.tensorio-android:tensorflow:0.9.12'
 
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

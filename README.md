@@ -183,7 +183,7 @@ An expanding suite of python tools for working with Tensor/IO bundles, the forma
 
 [TensorFlow @ doc.ai](https://github.com/doc-ai/tensorflow)
 
-Our TensorFlow fork with fixes and additional ops enabled to support both training and inference on iOS and Android. See specifically the [r2.0.doc.ai](https://github.com/doc-ai/tensorflow/tree/r2.0.doc.ai) branch and our [build script](https://github.com/doc-ai/tensorflow/blob/r2.0.doc.ai/tensorflow/contrib/makefile/create_full_ios_frameworks.sh) for composing the framework. See the [r2.0.doc.ai-android](https://github.com/doc-ai/tensorflow/tree/r2.0.doc.ai-android) branch and our [comprehensive readme](https://github.com/doc-ai/tensorflow/blob/r2.0.doc.ai-android/tensorflow/contrib/makefile/README_ANDROID_DOCAI.md) for instructions on building tensorflow for Android.
+Our TensorFlow fork with fixes and additional ops enabled to support both training and inference on iOS and Android. See specifically the [r2.0.doc.ai](https://github.com/doc-ai/tensorflow/tree/r2.0.doc.ai) branch and our [build script](https://github.com/doc-ai/tensorflow/blob/r2.0.doc.ai/tensorflow/contrib/makefile/create_full_ios_frameworks.sh) for composing the ios framework and our [comprehensive readme](https://github.com/doc-ai/tensorflow/blob/r2.0.doc.ai/tensorflow/contrib/makefile/README_ANDROID_DOCAI.md) for instructions on building tensorflow for Android.
 
 Our on-device build of TensorFlow 2.0 supports models built in TF v1.13 - v2.2 and may work with some models built in later versions of TensorFlow.
 

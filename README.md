@@ -1,6 +1,6 @@
 ### Introduction
 
-Tensor/IO is a lightweight, cross-platform library for on-device machine learning, bringing the power of TensorFlow and TensorFlow Lite to iOS, Android, and React Native applications. Tensor/IO does not implement any machine learning itself but works with an underlying library such as TensorFlow to simplify the process of deploying and using models on mobile phones.
+Tensor/IO is a lightweight, cross-platform library for on-device machine learning, bringing the power of TensorFlow and TensorFlow Lite to iOS, Android, and React Native applications. We now also support PyTorch on Android and will be bringing support for PyTorch to iOS soon. Tensor/IO does not implement any machine learning itself but works with an underlying library such as TensorFlow to simplify the process of deploying and using models on mobile phones.
 
 #### Declarative
 
@@ -59,7 +59,7 @@ Given a TensorFlow Lite MobileNet ImageNet classification model that has been pa
 
 ```
 
-Use the model on iOS:
+**Use the model on iOS:**
 
 ```objc
 UIImage *image = [UIImage imageNamed:@"example-image"];
@@ -71,7 +71,7 @@ NSDictionary *inference = (NSDictionary*)[model runOn:buffer];
 NSDictionary *classification = [inference[@"classification"] topN:5 threshold:0.1];
 ```
 
-Or with Swift:
+**Or with Swift:**
 
 ```swift
 let image = UIImage(named: "example-image")!
@@ -85,7 +85,7 @@ let inference = model.run(on: buffer)
 let classification = ((inference as! NSDictionary)["classification"] as! NSDictionary).topN(5, threshold: 0.1)
 ```
 
-In Java on Android:
+**In Java on Android:**
 
 ```java
 InputStream bitmap = getAssets().open("picture2.jpg");
@@ -100,7 +100,7 @@ float[] result =  (float[]) model.runOn(bMap);
 String[] labels = ((TIOVectorLayerDescription)model.descriptionOfOutputAtIndex(0)).getLabels();
 ```
 
-Or Kotlin:
+**Or Kotlin:**
 
 ```kotlin
 val bitmap = assets.open("picture2.jpg")
@@ -114,23 +114,33 @@ model.load()
 val result = model.runOn(bMap) as FloatArray
 ```
 
-And in React Native:
+**And in React Native:**
 
 ```js
-RNTensor/IO.load('image-classification');
+import TensorioTflite from 'react-native-tensorio-tflite';
 
-RNTensor/IO.run({
-  'image': {
-    [RNTensor/IO.imageKeyData]: '/path/to/image.jpeg',
-    [RNTensor/IO.imageKeyFormat]: RNTensor/IO.imageTypeFile
-  }
-}, (error, results) =>  {
-  classifications = results['classification'];
-  
-  RNTensor/IO.topN(5, 0.1, classifications, (error, top5) => {
-    console.log("TOP 5", top5);
+const { imageKeyFormat, imageKeyData, imageTypeAsset } = TensorioTflite.getConstants();
+const imageAsset = Platform.OS === 'ios' ? 'elephant' : 'elephant.jpg';
+
+TensorioTflite.load('image-classification.tiobundle', 'classifier');
+
+TensorioTflite
+  .run('classifier', {
+    'image': {
+      [imageKeyFormat]: imageTypeAsset,
+      [imageKeyData]: imageAsset
+    }
+  })
+  .then(output => {
+    // @ts-ignore
+    return TensorioTflite.topN(5, 0.1, output['classification'])
+  })
+  .then(setResults)
+  .catch(error => {
+    console.log(error)
   });
-});
+
+TensorioTflite.unload('classifier');
 ```
 
 ### License and Open Source
@@ -141,13 +151,13 @@ All Tensor/IO, Net Runner, and related code is open source under an Apache 2 lic
 
 [Tensor/IO Examples](https://github.com/doc-ai/tensorio/tree/master/examples)
 
-Part of this repository, a collection of jupyter notebooks showing how to build models that can be exported for inference and training on device with Tensor/IO. Also includes an iOS example application showing how to use each of those models on device.
+Part of this repository, a collection of jupyter notebooks showing how to build models that can be exported for inference and training on device with Tensor/IO. Also includes iOS and Android example applications showing how to use each of those models on device.
 
 #### iOS
 
 [Tensor/IO for iOS](https://github.com/doc-ai/tensorio-ios)
 
-Our Objective-C++ implementation of Tensor/IO, with support for Swift. Requires iOS 12.0+. Older versions of the framework support iOS 9.3+ and have been tested on devices as old as a 5th generation iPod touch (2012).
+Our Objective-C++ implementation of Tensor/IO, with support for Swift. Requires iOS 12.0+. Older versions of the framework support iOS 9.3+ and have been tested on devices as old as a 5th generation iPod touch (2012). Support TF Lite and TensorFlow backends.
 
 [Net Runner for iOS](https://github.com/doc-ai/net-runner-ios)
 
@@ -157,7 +167,7 @@ Net Runner is our iOS application environment for running and evaluating compute
 
 [Tensor/IO for Android](https://github.com/doc-ai/tensorio-android)
 
-Our Java implementation of Tensor/IO for Android. Requires Java 8. Kotlin compatible.
+Our Java implementation of Tensor/IO for Android. Requires Java 8. Kotlin compatible. Supports TF Lite, TensorFlow, and PyTorch backends.
 
 [Net Runner for Android](https://github.com/doc-ai/net-runner-android)
 
@@ -165,13 +175,13 @@ Net Runner is our Android application environment for running computer vision mo
 
 #### React Native
 
-[Tensor/IO for React Native](https://github.com/doc-ai/react-native-tensorio)
+[Tensor/IO TF Lite for React Native](https://github.com/doc-ai/react-native-tensorio-tflite)
 
-Our React Native bindings for Tensor/IO, with full support for the iOS version. React Native bindings for Android are forthcoming.
+Our React Native bindings for Tensor/IO with a TF Lite backend. Use TF Lite models on both iOS and Android via a single React Native app.
 
-[Tensor/IO Demo App for React Native](https://github.com/doc-ai/react-native-tensorio-example)
+[Tensor/IO TensorFlow for React Native](https://github.com/doc-ai/react-native-tensorio-tensorflow)
 
-An example application demonstrating how to use the Tensor/IO module in a React Native application, with a MobileNet ImageNet classification model.
+Our React Native bindings for Tensor/IO with a full TensorFlow backend. This is a work in progress as we resolve some dependency conflicts with the build.
 
 #### Tools
 

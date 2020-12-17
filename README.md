@@ -1,6 +1,6 @@
 ### Introduction
 
-Tensor/IO is a lightweight, cross-platform library for on-device machine learning, bringing the power of TensorFlow and TensorFlow Lite to iOS, Android, and React Native applications. Tensor/IO does not implement any machine learning itself but works with an underlying library such as TensorFlow to simplify the process of deploying and using models on mobile phones.
+Tensor/IO is a lightweight, cross-platform library for on-device machine learning, bringing the power of TensorFlow and TensorFlow Lite to iOS, Android, and React Native applications. We now also support PyTorch on Android and will be bringing support for PyTorch to iOS soon. Tensor/IO does not implement any machine learning itself but works with an underlying library such as TensorFlow to simplify the process of deploying and using models on mobile phones.
 
 #### Declarative
 
@@ -151,13 +151,13 @@ All Tensor/IO, Net Runner, and related code is open source under an Apache 2 lic
 
 [Tensor/IO Examples](https://github.com/doc-ai/tensorio/tree/master/examples)
 
-Part of this repository, a collection of jupyter notebooks showing how to build models that can be exported for inference and training on device with Tensor/IO. Also includes an iOS example application showing how to use each of those models on device.
+Part of this repository, a collection of jupyter notebooks showing how to build models that can be exported for inference and training on device with Tensor/IO. Also includes iOS and Android example applications showing how to use each of those models on device.
 
 #### iOS
 
 [Tensor/IO for iOS](https://github.com/doc-ai/tensorio-ios)
 
-Our Objective-C++ implementation of Tensor/IO, with support for Swift. Requires iOS 12.0+. Older versions of the framework support iOS 9.3+ and have been tested on devices as old as a 5th generation iPod touch (2012).
+Our Objective-C++ implementation of Tensor/IO, with support for Swift. Requires iOS 12.0+. Older versions of the framework support iOS 9.3+ and have been tested on devices as old as a 5th generation iPod touch (2012). Support TF Lite and TensorFlow backends.
 
 [Net Runner for iOS](https://github.com/doc-ai/net-runner-ios)
 
@@ -167,7 +167,7 @@ Net Runner is our iOS application environment for running and evaluating compute
 
 [Tensor/IO for Android](https://github.com/doc-ai/tensorio-android)
 
-Our Java implementation of Tensor/IO for Android. Requires Java 8. Kotlin compatible.
+Our Java implementation of Tensor/IO for Android. Requires Java 8. Kotlin compatible. Supports TF Lite, TensorFlow, and PyTorch backends.
 
 [Net Runner for Android](https://github.com/doc-ai/net-runner-android)
 

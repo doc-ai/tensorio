@@ -68,7 +68,7 @@ Send2Trash==1.5.0
 six==1.14.0
 tensorboard==2.0.2
 tensorflow-estimator==2.0.1
-tensorflow-gpu==2.0.3
+tensorflow-gpu==2.4.0
 tensorflow-hub==0.8.0
 termcolor==1.1.0
 terminado==0.8.3

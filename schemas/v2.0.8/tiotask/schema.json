@@ -1,0 +1,181 @@
+{
+  "$schema":  "http://json-schema.org/draft-07/schema#",
+  "$id":      "https://github.com/doc-ai/tensorio/schemas/v0.9.0/tiotask/schema.json",
+
+  "definitions": {
+    
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": { "type": "string" }
+      }
+    },
+
+    "placeholder.quantize": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "standard": { "type": "string" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "scale":    { "type": "number" },
+            "bias":     { "type": "number" }
+          }
+        }
+      ]
+    },
+
+    "placeholder.scalar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "shape"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["scalar"]
+        },
+        "dtype": {
+          "type": "string",
+          "enum": ["uint8", "float32", "int32", "int64"]
+        },
+        "shape": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "quantize": {
+          "$ref": "#/definitions/placeholder.quantize"
+        }
+      }
+    },
+
+    "placeholder.array": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "name",
+        "type",
+        "shape",
+        "value"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["array"]
+        },
+        "dtype": {
+          "type": "string",
+          "enum": ["uint8", "float32", "int32", "int64"]
+        },
+        "shape": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "quantize": {
+          "$ref": "#/definitions/placeholder.quantize"
+        },
+        "value": {
+          "type": "array",
+          "items": { "type": "number"  }
+        }
+      }
+    },
+
+    "placeholder.string": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "shape",
+        "dtype"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["string"]
+        },
+        "dtype": {
+          "type": "string",
+          "enum": ["uint8", "float32", "int32", "int64"]
+        },
+        "shape": {
+          "type": "array",
+          "items": { "type": "integer" }
+        }
+      }
+    },
+
+    "placeholders": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "#/definitions/placeholder.array"  },
+          { "$ref": "#/definitions/placeholder.string" },
+          { "$ref": "#/definitions/placeholder.scalar" }
+        ]
+      }
+    },
+
+    "taskParameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "numEpochs",
+        "batchSize"
+      ],
+      "properties": {
+        "numEpochs":    { "type": "integer" },
+        "batchSize":    { "type": "integer" },
+        "shuffle":      { "type": "boolean" },
+        "placeholders": { "$ref":  "#/definitions/placeholders" }
+      }
+    }
+
+  },
+
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "details",
+    "id",
+    "task",
+    "model",
+    "taskParameters"
+  ],
+  "properties": {
+    "name":             { "type": "string" },
+    "details":          { "type": "string" },
+    "id":               { "type": "string" },
+    "model":            { "$ref": "#/definitions/model" },
+    "taskParameters":  { "$ref": "#/definitions/taskParameters" },
+    "task":             { 
+      "type": "string",
+      "enum": ["train"] 
+    }
+  }
+}

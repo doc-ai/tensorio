@@ -153,6 +153,12 @@ All Tensor/IO, Net Runner, and related code is open source under an Apache 2 lic
 
 Part of this repository, a collection of jupyter notebooks showing how to build models that can be exported for inference and training on device with Tensor/IO. Also includes iOS and Android example applications showing how to use each of those models on device.
 
+#### Webinar
+
+[Tensor/IO Webinar](https://github.com/doc-ai/tensorio-webinar)
+
+A full end-to-end walkthrough of preparing a model for on-device training in a Google Colab notebook and then running it on iOS and Android.
+
 #### iOS
 
 [Tensor/IO for iOS](https://github.com/doc-ai/tensorio-ios)

@@ -1,0 +1,36 @@
+{
+	"name": "1 in 1 out pixel buffer normalization test",
+	"details": "Outputs the input pixel buffer but normalized to [-1,1] from [0,1]. Made to test the normalization and denormalization functions.",
+	"id": "1_in_1_out_pixelbuffer_normalization_test",
+	"version": "1",
+	"author": "doc.ai",
+	"license": "",
+	"model": {
+		"file": "predict",
+		"quantized": false,
+		"backend": "tensorflow",
+		"modes": ["predict"]
+	},
+	"inputs": [
+		{
+			"name": "input",
+			"type": "image",
+			"shape": [224,224,3],
+			"format": "RGB",
+			"normalize": {
+				"standard": "[0,1]"
+			}
+		}
+	],
+	"outputs": [
+		{
+			"name": "output",
+			"type": "image",
+			"shape": [224,224,3],
+			"format": "RGB",
+			"denormalize": {
+				"standard": "[-1,1]"
+			}
+		}
+	]
+}

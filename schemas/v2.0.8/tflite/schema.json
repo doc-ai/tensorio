@@ -76,7 +76,7 @@
         },
         "dtype": {
           "type": "string",
-          "enum": ["uint8", "float32"]
+          "enum": ["uint8", "float32", "int32", "int64"]
         },
         "shape": {
           "type": "array",
@@ -106,7 +106,7 @@
         },
         "dtype": {
           "type": "string",
-          "enum": ["uint8", "float32"]
+          "enum": ["uint8", "float32", "int32", "int64"]
         },
         "shape": {
           "type": "array",
@@ -197,7 +197,7 @@
         },
         "dtype": {
           "type": "string",
-          "enum": ["uint8", "float32"]
+          "enum": ["uint8", "float32", "int32", "int64"]
         },
         "shape": {
           "type": "array",
@@ -245,7 +245,7 @@
         },
         "dtype": {
           "type": "string",
-          "enum": ["uint8", "float32"]
+          "enum": ["uint8", "float32", "int32", "int64"]
         },
         "shape": {
           "type": "array",
@@ -275,7 +275,7 @@
         },
         "dtype": {
           "type": "string",
-          "enum": ["uint8", "float32"]
+          "enum": ["uint8", "float32", "int32", "int64"]
         },
         "shape": {
           "type": "array",
@@ -369,7 +369,7 @@
         },
         "dtype": {
           "type": "string",
-          "enum": ["uint8", "float32"]
+          "enum": ["uint8", "float32", "int32", "int64"]
         },
         "shape": {
           "type": "array",

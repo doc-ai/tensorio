@@ -1,0 +1,42 @@
+{
+	"name": "Cats vs Dogs MobileNet V2 1.0 128",
+	"details": "Cats vs Dogs Kaggle model based on MobileNet V2 architecture with a width multiplier of 1.0 and an input resolution of 128x128.",
+	"id": "cats-vs-dogs-v2-100-128-unquantized",
+	"version": "1",
+	"author": "doc.ai",
+	"license": "Apache License. Version 2.0 http://www.apache.org/licenses/LICENSE-2.0",
+	"model": {
+		"file": "train",
+		"quantized": false,
+		"type": "image.classification.catsvsdogs",
+		"backend": "tensorflow",
+		"modes": ["train"]
+	},
+	"inputs": [
+		{
+			"name": "image",
+			"type": "image",
+			"shape": [-1,128,128,3],
+			"format": "RGB",
+			"normalize": { "standard": "[0,1]" }
+		},
+		{
+			"name": "labels",
+			"type": "array",
+			"dtype": "int32",
+			"shape": [-1,1]
+		}
+	],
+	"outputs": [
+		{
+			"name": "sigmoid_cross_entropy_loss/value",
+			"type": "array",
+			"shape": [1]
+		}
+	],
+	"train": {
+		"ops": [
+			"train"
+		]
+	}
+}
